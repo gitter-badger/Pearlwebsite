@@ -283,13 +283,13 @@
                     <div class="col-lg-3 col-md-6">
                         <h3>sitemap</h3>
                         <ul class="list-unstyled">
-                            <a href="index.html"><li>Home</li></a>
-                            <a href="index.html#about"><li>About us</li></a>
-                            <a href="index.html#featuers"><li>Room Facilities</li></a>
-                            <a href="gallery.html"><li>Photo Gallery</li></a>
-                            <a href="index.html#reservation"><li>Reserve Online</li></a>
-                            <a href="index.html#Reviews"><li>Reviews</li></a>
-                            <a href="index.html#map"><li>Map</li></a>
+                            <a href="/"><li>Home</li></a>
+                            <a href="/#about"><li>About us</li></a>
+                            <a href="/#featuers"><li>Room Facilities</li></a>
+                            <a href="gallery"><li>Photo Gallery</li></a>
+                            <a href="/#reservation"><li>Reserve Online</li></a>
+                            <a href="/views"><li>Reviews</li></a>
+                            <a href="/#map"><li>Map</li></a>
                         </ul>
                     </div>
                     

@@ -23,4 +23,29 @@ class RouteController extends Controller
     {
         return view('reservation-form');
     }
+    
+    public function admin()
+    {
+        return view('admin-page');
+    }
+    
+    public function edit()
+    {
+        return view('edit-reservation');
+    }
+    
+    public function manager()
+    {
+        return view('manager');
+    }
+    
+    public function profile()
+    {
+        return view('profile-page');
+    }
+    
+    public function receptionist()
+    {
+        return view('receptionist');
+    }
 }

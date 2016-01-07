@@ -14,8 +14,11 @@
 Route::get('/',"RouteController@home");
 Route::get('reserve', "RouteController@reserve");
 Route::get('gallery', "RouteController@gallery" );
-
-
+Route::get('admin' , "RouteController@admin");
+Route::get('manager' , "RouteController@manager");
+Route::get('edit' , "RouteController@edit");
+Route::get('profile' , "RouteController@profile");
+Route::get('receptionist' , "RouteController@receptionist");
 /*
 |--------------------------------------------------------------------------
 | Application Routes

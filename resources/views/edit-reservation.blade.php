@@ -107,16 +107,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="Images/pb.png"></a>
+                <a class="navbar-brand" href="/"><img src="Images/pb.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li class=""><a href="index.html">Home</a></li>
-                    <li><a href="index.html#featuers">Room Facilities</a></li>
-                    <li><a href="gallery.html" target="_blank">Photo Gallary</a></li>
+                    <li class=""><a href="/">Home</a></li>
+                    <li><a href="/#featuers">Room Facilities</a></li>
+                    <li><a href="gallery" target="_blank">Photo Gallary</a></li>
                     <li><a href="#footer">Contact Us</a></li>
                     <li text-center><a href="#" data-toggle="modal" data-target="#SignIn">Sign in</a></li>
                     <li text-center><a href="#" data-toggle="modal" data-target="#SignUp">New Client</a></li>
@@ -377,13 +377,13 @@
                     <div class="col-lg-3 col-md-6">
                         <h3>sitemap</h3>
                         <ul class="list-unstyled">
-                            <a href="index.html"><li>Home</li></a>
-                            <a href="index.html#about"><li>About us</li></a>
-                            <a href="index.html#featuers"><li>Room Facilities</li></a>
-                            <a href="gallery.html"><li>Photo Gallery</li></a>
-                            <a href="index.html#reservation"><li>Reserve Online</li></a>
-                            <a href="index.html#Reviews"><li>Reviews</li></a>
-                            <a href="index.html#map"><li>Map</li></a>
+                            <a href="/"><li>Home</li></a>
+                            <a href="/#about"><li>About us</li></a>
+                            <a href="/#featuers"><li>Room Facilities</li></a>
+                            <a href="gallery"><li>Photo Gallery</li></a>
+                            <a href="/#reservation"><li>Reserve Online</li></a>
+                            <a href="/#Reviews"><li>Reviews</li></a>
+                            <a href="/#map"><li>Map</li></a>
                         </ul>
                     </div>
                     

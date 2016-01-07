@@ -287,7 +287,7 @@
 						<figcaption>
 							<h2>Pearl <span>Hotel</span></h2>
 							<p>Pearl Hotel Is a 3-Stars Hotel At EL Ma'ady District , The Queitest Place In Cairo .</p>
-							<a href="gallery.html" target="_blank">View more</a>
+							<a href="gallery" target="_blank">View more</a>
 						</figcaption>			
 					</figure>
 					<figure class="effect-duke wow fadeInRight">
@@ -295,7 +295,7 @@
 						<figcaption>
                             <h2>Pearl <span>Hotel</span></h2>
                             <p>Pearl Hotel Is a 3-Stars Hotel At EL Ma'ady District , The Queitest Place In Cairo .</p>
-							<a href="gallery.html" target="_blank">View more</a>
+							<a href="gallery" target="_blank">View more</a>
 						</figcaption>			
 					</figure>
 				</div>
@@ -306,7 +306,7 @@
 						<figcaption>
 							<h2>Pearl <span>Hotel</span></h2>
 							<p>Pearl Hotel Is a 3-Stars Hotel At EL Ma'ady District , The Queitest Place In Cairo .</p>
-							<a href="gallery.html" target="_blank">View more</a>
+							<a href="gallery" target="_blank">View more</a>
 						</figcaption>			
 					</figure>
 					<figure class="effect-duke wow fadeInRight">
@@ -314,7 +314,7 @@
 						<figcaption>
 							<h2>Pearl <span>Hotel</span></h2>
 							<p>Pearl Hotel Is a 3-Stars Hotel At EL Ma'ady District , The Queitest Place In Cairo .</p>
-							<a href="gallery.html" target="_blank">View more</a>
+							<a href="gallery" target="_blank">View more</a>
 						</figcaption>			
 					</figure>
 				</div>
@@ -650,7 +650,7 @@
                 </div>
             </div>
 
-            <a href="reservation-form.html" class="btn btn-info btn-lg" role="button" target=_blank>Continue Resevation</a>
+            <a href="reserve" class="btn btn-info btn-lg" role="button" target=_blank>Continue Resevation</a>
         </div>
 
 
@@ -690,13 +690,13 @@
                     <div class="col-lg-3 col-md-6">
                         <h3>sitemap</h3>
                         <ul class="list-unstyled">
-                            <a href="index.html"><li>Home</li></a>
-                            <a href="index.html#about"><li>About us</li></a>
-                            <a href="index.html#featuers"><li>Room Facilities</li></a>
-                            <a href="gallery.html"><li>Photo Gallery</li></a>
-                            <a href="index.html#reservation"><li>Reserve Online</li></a>
-                            <a href="index.html#Reviews"><li>Reviews</li></a>
-                            <a href="index.html#map"><li>Map</li></a>
+                            <a href="/"><li>Home</li></a>
+                            <a href="/#about"><li>About us</li></a>
+                            <a href="/#featuers"><li>Room Facilities</li></a>
+                            <a href="gallery"><li>Photo Gallery</li></a>
+                            <a href="/#reservation"><li>Reserve Online</li></a>
+                            <a href="/#Reviews"><li>Reviews</li></a>
+                            <a href="/#map"><li>Map</li></a>
                         </ul>
                     </div>
                     
