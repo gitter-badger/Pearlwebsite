@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>pearl</title>
+    <title>Confirm Reservation</title>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" type="text/css">
@@ -26,39 +26,8 @@
 <!=====================================================================================================================================================================================================================================================-->
 <!---------- start confirm reservation ---------->
                 <!--Sign in -->
-                <div class="modal fade" id="SignIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">LOGIN RIGHT HERE</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form role="form">
-
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="username">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password">
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="">Remember Me</label>
-                                    </div>
-
-                                    <a href="#">Forget Password</a>
-
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Login</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @include('layout.signin')
+<!-- signin end -->
 <!--Sign Up -->
                @include('layout.signup')
 <!--Sign Up end -->
@@ -229,18 +198,9 @@
                 <div class="row">
                     
                     
-                    <div class="col-lg-3 col-md-6">
-                        <h3>sitemap</h3>
-                        <ul class="list-unstyled">
-                            <a href="/"><li>Home</li></a>
-                            <a href="/#about"><li>About us</li></a>
-                            <a href="/#featuers"><li>Room Facilities</li></a>
-                            <a href="gallery"><li>Photo Gallery</li></a>
-                            <a href="/#reservation"><li>Reserve Online</li></a>
-                            <a href="/#Reviews"><li>Reviews</li></a>
-                            <a href="/#map"><li>Map</li></a>
-                        </ul>
-                    </div>
+                    <!-- site map -->
+                    @include('layout.sitemap')
+                    <!-- site map end -->
                     
                     
                     <div class="col-lg-5">
