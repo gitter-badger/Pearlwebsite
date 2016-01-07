@@ -17,7 +17,7 @@ class UserTable extends Migration
             $table->string('username',50)->unique();
             $table->date('birthday');
             $table->char('gender');
-            $table->string('email',50);
+            $table->string('email',50)->unique();
             $table->string('password',50);
             $table->integer('phone');
             $table->integer('user_type_id');
