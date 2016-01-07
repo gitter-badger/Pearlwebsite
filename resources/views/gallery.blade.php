@@ -28,7 +28,7 @@
 
    
    
-                 <!--Sign in -->
+                <!--Sign in -->
                 <div class="modal fade" id="SignIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">

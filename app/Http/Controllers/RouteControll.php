@@ -9,10 +9,18 @@ use App\Http\Controllers\Controller;
 
 class RouteControll extends Controller
 {
-    public function  index()
+    public function  home()
     {
-        return view('index');
+        return view('main');
     }
     
-    public function 
+    public function gallery()
+    {
+        return view('gallery');
+    }
+    
+    public function reserve()
+    {
+        return view('reservation-form');
+    }
 }

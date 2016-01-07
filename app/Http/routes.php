@@ -11,16 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('index', function () {
-    return view('index');
-});
+Route::get('/',"RouteControll@home");
+Route::get('gallery', "RouteControll@gallery");
+Route::get('reserve',"RouteControll@reserve");
 
-Route::get('gallery', function () {
-    return view('gallery');
-});
 
 
 /*

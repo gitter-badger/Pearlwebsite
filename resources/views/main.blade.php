@@ -245,16 +245,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="images/pb.png"></a>
+                <a class="navbar-brand" href="/"><img src="images/pb.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li class=""><a href="index.html">Home</a></li>
-                    <li><a href="index.html#featuers">Room Facilities</a></li>
-                    <li><a href="gallery.html" target="_blank" >Photo Gallery</a></li>
+                    <li class=""><a href="/">Home</a></li>
+                    <li><a href="#featuers">Room Facilities</a></li>
+                    <li><a href="gallery" target="_blank" >Photo Gallery</a></li>
                     <li><a href="#footer">Contact Us</a></li>
                     <li text-center><a href="#" data-toggle="modal" data-target="#SignIn">Sign in</a></li>
                     <li text-center><a href="#" data-toggle="modal" data-target="#SignUp">New Client</a></li>
@@ -287,7 +287,7 @@
 						<figcaption>
 							<h2>Pearl <span>Hotel</span></h2>
 							<p>Pearl Hotel Is a 3-Stars Hotel At EL Ma'ady District , The Queitest Place In Cairo .</p>
-							<a href="gallery.html" target="_blank">View more</a>
+							<a href="gallery" target="_blank">View more</a>
 						</figcaption>			
 					</figure>
 					<figure class="effect-duke wow fadeInRight">
@@ -295,7 +295,7 @@
 						<figcaption>
                             <h2>Pearl <span>Hotel</span></h2>
                             <p>Pearl Hotel Is a 3-Stars Hotel At EL Ma'ady District , The Queitest Place In Cairo .</p>
-							<a href="gallery.html" target="_blank">View more</a>
+							<a href="gallery" target="_blank">View more</a>
 						</figcaption>			
 					</figure>
 				</div>
@@ -306,7 +306,7 @@
 						<figcaption>
 							<h2>Pearl <span>Hotel</span></h2>
 							<p>Pearl Hotel Is a 3-Stars Hotel At EL Ma'ady District , The Queitest Place In Cairo .</p>
-							<a href="gallery.html" target="_blank">View more</a>
+							<a href="gallery" target="_blank">View more</a>
 						</figcaption>			
 					</figure>
 					<figure class="effect-duke wow fadeInRight">
@@ -314,7 +314,7 @@
 						<figcaption>
 							<h2>Pearl <span>Hotel</span></h2>
 							<p>Pearl Hotel Is a 3-Stars Hotel At EL Ma'ady District , The Queitest Place In Cairo .</p>
-							<a href="gallery.html" target="_blank">View more</a>
+							<a href="gallery" target="_blank">View more</a>
 						</figcaption>			
 					</figure>
 				</div>
