@@ -1,6 +1,6 @@
 $(function(){
-    
    
+   /***********************/
     $('#signup').submit(function(e){
         e.preventDefault();
         $.ajax({
@@ -23,12 +23,12 @@ $(function(){
                 $('input[name="confirmpassword"]').val('');
                 /*********************/
                 // page should reload here
-                alert(data);
+                location.reload();
             },
             error: function(data){
                 var err = data.responseJSON;
                 
-                alert(JSON.stringify(err));
+               // alert(JSON.stringify(err));
                 
                 /********************/
                 if(err.hasOwnProperty('username'))

@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\user_table;
 use DB;
+use Session;
 
 class operationController extends Controller
 {
@@ -49,5 +50,20 @@ class operationController extends Controller
             'phone'    => $phone,
             'user_type_id' => $userType
         ]);
+        
+        if(session_status() == PHP_SESSION_NONE)
+        {
+            session_start();
+            $_SESSION['logged_state'] = 1;
+            $_SESSION['username'] = $username;
+            $_SESSION['email'] = $email;
+        }else
+        {
+            $_SESSION['logged_state'] = 1;
+            $_SESSION['username'] = $username;
+            $_SESSION['email'] = $email;
+        }
     }
+    
+   
 }

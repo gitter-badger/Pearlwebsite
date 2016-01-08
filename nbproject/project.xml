@@ -6,6 +6,8 @@
             <name>pearl</name>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>endelse</word>
+            <word>endif</word>
             <word>sitemap</word>
         </spellchecker-wordlist>
     </configuration>
