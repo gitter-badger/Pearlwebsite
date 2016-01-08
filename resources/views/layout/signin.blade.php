@@ -22,12 +22,13 @@
                                             <input type="checkbox" value="">Remember Me</label>
                                     </div>
 
-                                    <a href="#">Forget Password</a>
+                                    <a href="#">Forget Password</a><br> <br>
                                     
-                                     <div class="modal-footer">
+                                    <input type="submit" class="btn btn-primary" value="Login" >
+                                   <!--  <div class="modal-footer">
                                          <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
                                          <button type="submit" class="btn btn-primary">Login</button>
-                                    </div>
+                                    </div> -->
                                 </form>
                             </div>
                            <!-- -->

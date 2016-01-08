@@ -34,15 +34,15 @@ class operation_controller extends Controller
            {
                session_start();
                $_SESSION['logged_state'] = 1;
-               $_SESSION['user_name']=$name;
-               $_SESSION['phone']=$phone;
-               $_SESSION['email']=$email;
+               $_SESSION['username']= $name;
+               $_SESSION['phone']= $phone;
+               $_SESSION['email']= $email;
                
            }
             else 
              {
                $_SESSION['logged_state'] = 1;
-               $_SESSION['user_name']=$name;
+               $_SESSION['username']=$name;
                $_SESSION['phone']=$phone;
                $_SESSION['email']=$email;
              }
