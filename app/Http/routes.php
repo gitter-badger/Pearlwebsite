@@ -19,6 +19,11 @@ Route::get('manager' , "RouteController@manager");
 Route::get('edit' , "RouteController@edit");
 Route::get('profile' , "RouteController@profile");
 Route::get('receptionist' , "RouteController@receptionist");
+
+
+/*****************/
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

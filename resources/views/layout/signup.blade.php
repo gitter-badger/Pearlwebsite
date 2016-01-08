@@ -6,13 +6,13 @@
                 <h4 class="modal-title" id="myModalLabel">LOGIN RIGHT HERE</h4>
             </div>
             <div class="modal-body">
-                <form role="form">
+                <form role="form" id="signup" >
 
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="username" name="username" >
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="E-mail">
+                        <input type="text" class="form-control" placeholder="E-mail" name="email" >
                     </div>
                     <div class="form-group">
                         <label>Gender</label>
@@ -22,34 +22,27 @@
                         </div>
                     </div>
                     {{ Form::label('Birthday') }}<br>
-                    {{ Form::selectRange('number', 1, 31) }}
+                    {{ Form::selectRange('day', 1, 31) }}
                     {{ Form::selectMonth('month') }}
-                    {{ Form::selectRange('number', 1946,2016) }}<br><br>
-                    
-                    
-                    <!--
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select> -->
+                    {{ Form::selectRange('year', 1946,2016) }}<br><br>
                     
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="phone">
+                        <input type="text" class="form-control" placeholder="phone" name="phone" >
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Password" name="password">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Confirm Password">
+                        <input type="password" class="form-control" placeholder="Confirm Password" name="confirmpassword">
                     </div>
+                    <input type="submit" class="btn btn-primary" value="Sign Up">
                 </form>
             </div>
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Create</button>
-            </div>
+                <button type="button" id="subsign" class="btn btn-primary">Sign up</button>
+            </div> -->
+            
         </div>
     </div>
 </div>
