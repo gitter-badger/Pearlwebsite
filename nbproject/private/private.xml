@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/opt/lampp/htdocs/pearl/app/Http/Controllers/RouteController.php</file>
-            <file>file:/opt/lampp/htdocs/pearl/app/Http/routes.php</file>
+            <file>file:/opt/lampp/htdocs/pearl/resources/views/layout/signup.blade.php</file>
+            <file>file:/opt/lampp/htdocs/pearl/resources/views/pages/images.blade.php</file>
+            <file>file:/opt/lampp/htdocs/pearl/public/js/action.js</file>
+            <file>file:/opt/lampp/htdocs/pearl/resources/views/pages/main.blade.php</file>
         </group>
     </open-files>
 </project-private>

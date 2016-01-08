@@ -47,18 +47,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li class=""><a href="/">Home</a></li>
-                    <li><a href="/#featuers">Room Facilities</a></li>
-                    <li><a href="gallery" target="_blank">Photo Gallary</a></li>
-                    <li><a href="#footer">Contact Us</a></li>
-                    <li text-center><a href="#" data-toggle="modal" data-target="#SignIn">Sign in</a></li>
-                    <li text-center><a href="#" data-toggle="modal" data-target="#SignUp">New Client</a></li>
-                </ul>
-
-            </div>
+            @include('layout.menu')
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
@@ -257,12 +246,13 @@ By accessing and/or using this code snippet, you agree to AccuWeather�s terms 
 <!-------script-------->
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+ <script src="js/signupAction.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/moment.js"></script>
 <script src="js/action.js"></script>
     <script src="js/smooth-scroll.min.js"></script>
 <script src="js/bootstrap-datetimepicker.min.js"></script>
- 
+
 
     <script>new WOW().init();</script>
 </body>
