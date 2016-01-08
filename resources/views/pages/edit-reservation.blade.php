@@ -374,6 +374,7 @@ By accessing and/or using this code snippet, you agree to AccuWeather?s terms an
 <script src="js/bootstrap.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/moment.js"></script>
+<script src="js/action.js"></script>
 
 </body>
 </html>

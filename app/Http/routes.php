@@ -21,8 +21,6 @@ Route::get('profile' , "RouteController@profile");
 Route::get('receptionist' , "RouteController@receptionist");
 
 
-/*****************/
-
 
 /*
 |--------------------------------------------------------------------------
