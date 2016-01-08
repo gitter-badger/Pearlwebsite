@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use Illuminate\Http\Request;
 
 Route::get('/',"RouteController@home");
 Route::get('reserve', "RouteController@reserve");
@@ -19,6 +20,8 @@ Route::get('manager' , "RouteController@manager");
 Route::get('edit' , "RouteController@edit");
 Route::get('profile' , "RouteController@profile");
 Route::get('receptionist' , "RouteController@receptionist");
+
+
 Route::post('login', "operation_controller@login");
 /*
 |--------------------------------------------------------------------------

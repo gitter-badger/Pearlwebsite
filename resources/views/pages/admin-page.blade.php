@@ -131,7 +131,7 @@
                                  <p>Name : mohamed ibrahim </p>
                                  <p>Phone : 01142513823 </p>
                                  <p>Email : M7md.fcih@gmail.com </p>
-                                 <p>Egypt</p>
+                                 
                                  <button class="btn btn-info btn-sm">Change Photo</button>
                                        
                             </div>          

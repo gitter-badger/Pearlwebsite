@@ -1,19 +1,20 @@
-<<<<<<< HEAD
-$('#SignIn').click(function(){
+/*$('#SignIn').submit(function(){
 		
 			$.ajax({
 				url : 'login',
 				type: 'POST',
 				data: {
-				name:  $('#name').val(),
-				pass: $('#pass').val()
+				name:  $('#we').val(),
+				pass: $('#be').val()
 				},
 				success:function(data){
-					$('#name').val('');
-					$('#pass').val('');
-
-					$('#name-danger').html("");
-                                        $('#pass-danger').html("");
+                                    alert(name , pass);
+                                    
+                                    $('#we').val('');
+                                    $('#be').val('');
+                                            
+					$('#we-danger').html("");
+                                        $('#be-danger').html("");
 					
 					
 				},
@@ -21,29 +22,69 @@ $('#SignIn').click(function(){
 					var error = data.responseJSON;
 						
 						if(error.hasOwnProperty('name'))
-						{
-							$('#name-danger').html("Enter user name ");
+						{    
+							$('#we-danger').html("Enter user name ");
 						}else{
-							$('#name-danger').html("");
+							$('#we-danger').html("");
 						}
 
 						if (error.hasOwnProperty('pass'))
 						{
-							$('#phone-danger').html("Enter passowrd");
+							$('#be-danger').html("Enter passowrd");
 						}else{
-							$('#phone-danger').html("");
+							$('#be-danger').html("");
 						}
 
 				}
 			});
 	
 		return false;
-	});
-=======
-$(function(){
-    
-    
-    
+	});*/
+$(document).ready(function(){
+  
+  
+   $('#SignIn').submit(function()
+   { 
+                    
+                    $.ajax({
+				url : 'login',
+				type: 'POST',
+				data: {
+				name:  $('#wq').val(),
+				pass: $('#bq').val()
+				},
+				success:function(data){
+                                    //alert(name , pass);
+                                    alert(data);
+                                    $('#wq').val('');
+                                    $('#bq').val('');
+                                            
+					$('#we-danger').html("");
+                                        $('#be-danger').html("");
+				},
+				error: function(data){
+					var error = data.responseJSON;
+						
+						if(error.hasOwnProperty('name'))
+						{    
+							$('#we-danger').html("Enter user name ");
+						}else{
+							$('#we-danger').html("");
+						}
+
+						if (error.hasOwnProperty('pass'))
+						{
+							$('#be-danger').html("Enter passowrd");
+						}else{
+							$('#be-danger').html("");
+						}
+
+				}
+                            });
+   return false;
 });
 
->>>>>>> a89921ae95e252f8f1fb745c04d11beadbff7464
+});
+
+
+
