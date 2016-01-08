@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $('#SignIn').click(function(){
 		
 			$.ajax({
@@ -38,3 +39,11 @@ $('#SignIn').click(function(){
 	
 		return false;
 	});
+=======
+$(function(){
+    
+    
+    
+});
+
+>>>>>>> a89921ae95e252f8f1fb745c04d11beadbff7464
