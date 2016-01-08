@@ -687,6 +687,7 @@ By accessing and/or using this code snippet, you agree to AccuWeather�s terms 
 <script src="js/moment.js"></script>
     <script src="js/smooth-scroll.min.js"></script>
 <script src="js/bootstrap-datetimepicker.min.js"></script>
+<script src="js/action.js"></script>
 
 </body>
 </html>
