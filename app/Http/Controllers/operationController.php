@@ -57,11 +57,28 @@ class operationController extends Controller
             $_SESSION['logged_state'] = 1;
             $_SESSION['username'] = $username;
             $_SESSION['email'] = $email;
+            $_SESSION['phone'] = $phone;
         }else
         {
             $_SESSION['logged_state'] = 1;
             $_SESSION['username'] = $username;
             $_SESSION['email'] = $email;
+        }
+    }
+    
+    public function logout()
+    {
+        if(session_status() == PHP_SESSION_NONE)
+        {
+            session_start();
+            unset($_SESSION['logged_state']);
+            unset($_SESSION['username']);
+            unset($_SESSION['email']);
+        }else
+        {
+            unset($_SESSION['logged_state']);
+            unset($_SESSION['username']);
+            unset($_SESSION['email']);
         }
     }
     

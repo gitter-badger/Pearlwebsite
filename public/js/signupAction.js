@@ -27,9 +27,6 @@ $(function(){
             },
             error: function(data){
                 var err = data.responseJSON;
-                
-               // alert(JSON.stringify(err));
-                
                 /********************/
                 if(err.hasOwnProperty('username'))
                 {
@@ -83,8 +80,18 @@ $(function(){
                 /*****************/
             }
         });
-        
-        
-        
     });
+    $('#logout').click(function(){
+        $.ajax({
+            url: 'logout',
+            type: 'POST',
+            success: function(data){
+                location.reload();
+            },
+            error  : function(data){
+                
+            }
+        });
+    });
+    
 });

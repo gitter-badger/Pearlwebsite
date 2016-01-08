@@ -23,7 +23,7 @@ Route::get('receptionist' , "RouteController@receptionist");
 /*********************************************************/
 
 Route::post('signup',"operationController@signup");
-
+Route::post('logout' , "operationController@logout");
 
 /*
 |--------------------------------------------------------------------------
