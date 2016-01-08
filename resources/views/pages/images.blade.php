@@ -277,9 +277,10 @@ By accessing and/or using this code snippet, you agree to AccuWeather?s terms an
 
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/action.js"></script>
+<script src="js/signupAction.js"></script>
 <script src="js/plugins.js"></script>
-<script src="js/action.js"></script>
+
+
 
 
 </body>

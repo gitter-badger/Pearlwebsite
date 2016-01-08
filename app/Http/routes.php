@@ -20,6 +20,9 @@ Route::get('edit' , "RouteController@edit");
 Route::get('profile' , "RouteController@profile");
 Route::get('receptionist' , "RouteController@receptionist");
 
+/*********************************************************/
+
+Route::post('signup',"operationController@signup");
 
 
 /*
