@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use App\user_table;
+
+use DB;
+
+
 class RouteController extends Controller
 {
     public function home()
@@ -26,7 +31,17 @@ class RouteController extends Controller
     
     public function admin()
     {
-        return view('pages.admin-page');
+        if(session_status() == PHP_SESSION_NONE)
+        {
+            session_start();
+        }
+        if(isset($_SESSION['type_id']) && $_SESSION['type_id'] == 3)
+        {
+            return view('pages.admin-page');
+        }else
+        {
+            return view('errors.404');
+        }
     }
     
     public function edit()
@@ -39,11 +54,43 @@ class RouteController extends Controller
         return view('pages.manager');
     }
     
-    public function profile($name)
-    {   
-       return view('pages.profile-page', ['user' => user_table::find($name)]);
-        
+
+   
+    public function profile()
+    {
+         if(session_status() == PHP_SESSION_NONE)
+        {
+            session_start();
         }
+      
+        if(isset($_SESSION['type_id']))
+        {
+            if($_SESSION['type_id'] == 1)
+            {
+                $user = $_SESSION;
+                return view('pages.profile-page', $user);
+            }else if($_SESSION['type_id'] == 2)
+            {
+                $user = $_SESSION;
+                return view('pages.manager',$user);
+            }else if($_SESSION['type_id'] == 3)
+            {
+                $user = $_SESSION;
+                return view('pages.admin-page',$user);
+            }else
+            {
+                $user = $_SESSION;
+                return view('pages.receptionist',$user);
+            }
+        }else
+        {
+            
+            return redirect()->action("RouteController@home");
+        }
+        
+    }
+   
+
     
     public function receptionist()
     {

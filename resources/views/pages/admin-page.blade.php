@@ -117,9 +117,9 @@
                            <img src="images/person.png" class="img-thumbnail">
                                           <div class="main-info">
                                              <p>Hello Admin</p>
-                                 <p>Name : mohamed ibrahim </p>
-                                 <p>Phone : 01142513823 </p>
-                                 <p>Email : M7md.fcih@gmail.com </p>
+                                 <p>Name : {{ $username }} </p>
+                                 <p>Phone : {{ $phone }} </p>
+                                 <p>Email : {{ $email }} </p>
                                  
                                  <button class="btn btn-info btn-sm">Change Photo</button>
                                        

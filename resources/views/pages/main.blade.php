@@ -379,7 +379,7 @@
     <!--   ------------------------------------------------------------------>
 
 
-    <section class="reservation" id="reservation">
+    <form class="reservation" id="reservation">
 
 
 
@@ -395,8 +395,10 @@
                     <div class="reserve text-left">
                         <div class="form-group">
                             <h5>check in date:</h5>
-
-                            <select class="form-control" id="sel1">
+                            {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control']) }}
+                           @inject('hel',App\ourclass\formaction')
+                           
+                           <!-- <select class="form-control" id="sel1">
                                 <option selected="selected">day</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -428,17 +430,17 @@
                                 <option>29</option>
                                 <option>30</option>
                                 <option>31</option>
+                            </select> -->
 
-
-                            </select>
-
-                            <select class="form-control" id="sel1">
+                            {{ Form::selectMonth('rmonth',null,['class' => 'form-control','id' => 'sell']) }}
+                            
+                          <!--  <select class="form-control" id="sel1">
                                 <option selected="selected">M/y</option>
                                 <option>JAn 2015</option>
                                 <option>Feb 2015</option>
                                 <option> Mar 2015</option>
                                 <option>Apr 2015</option>
-                            </select>
+                            </select> -->
                         </div>
                     </div>
 
@@ -447,11 +449,13 @@
                         <form role="form">
                             <div class="form-group">
                                 <h5>check out date:</h5>
-
+                                  
                                 <select class="form-control" id="sel1">
-                                    <option selected="selected">day</option>
-                                    <option>1</option>
-                                    <option>2</option>
+                                    <option selected="selected" name='dy'>day</option>
+                                    <?php for($i=1;$i<=31;$i++){?>
+                                    <option value="<?php $i ?>"><?php echo $i?></option>
+                                    <?php }?>
+                                    <!--<option>2</option>
                                     <option>3</option>
                                     <option>4</option>
                                     <option>5</option>
@@ -479,11 +483,12 @@
                                     <option>28</option>
                                     <option>29</option>
                                     <option>30</option>
-                                    <option>31</option>
+                                    <option>31</option>-->
                                 </select>
 
                                 <select class="form-control" id="sel1">
                                     <option selected="selected">M/y</option>
+                                    
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -517,26 +522,25 @@
                             <tr class="danger">
 
                                 <td>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optradio">Single Room</label>
-                                    </div>
+                                    <p> Single Room</p>
 
                                     <h6>WIFI + Air Conditioning</h6></td>
                                 <td>
                                     <h5>US$ 50</h5></td>
                                 <td>
                                     <h5>One Person</h5></td>
-                                <td rowspan="3">
+                                <td rowspan="1">
 
-                                    <div class="form-group">
+                                    <input type="text" class="form-control" id="v1" name="oneval" value="0" ><br></br>
+                                        
+                                   <!-- <div class="form-group">
                                         <select class="form-control" id="sel1">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
                                             <option>4</option>
                                         </select>
-                                    </div>
+                                    </div>-->
 
 
                                 </td>
@@ -544,44 +548,57 @@
 
                             <tr class="danger">
                                 <td>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optradio">Double Room</label>
-                                    </div>
+                                    <p>Double Room</p>
                                     <h6>WIFI + Air Conditioning</h6></td>
                                 <td>
                                     <h5>US$ 60</h5></td>
                                 <td>
                                     <h5>Two Persons</h5></td>
+                                <td rowspan="1">
+                                    <input type="text" class="form-control" id="v2" name="twoval" value="0" >
+                                       
+                                </td>
 
                             </tr>
 
                             <tr class="danger">
                                 <td>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optradio">Tribble Room</label>
-                                    </div>
+                                    <p> Tribble Room</p>
                                     <h6>WIFI + Air Conditioning</h6></td>
                                 <td>
                                     <h5>US$ 70</h5></td>
                                 <td>
                                     <h5>Three Persons</h5></td>
-
+                                
+                                <td rowspan="1">
+                                    <input type="text" class="form-control" id="v3" name="threeval" value="0" >
+                                       <!-- <label id="we-danger" ></label>-->
+                                       
+                                </td>
+                               
                             </tr>
 
 
                         </table>
+                        <label id="we" style="color: red" ></label>
                     </form>
                 </div>
             </div>
-
-            <a href="reserve" class="btn btn-info btn-lg" role="button" target=_blank>Continue Resevation</a>
+           @if(session_status() == PHP_SESSION_NONE)
+            <?php session_start(); ?>
+        @endif
+        @if(!isset($_SESSION['logged_state']))
+        <a href="#" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#SignUp">Continue Resevation</a>
+        @else
+      <!--  <a href="reserve" id="res" class="btn btn-info btn-lg" role="button" target=_blank>Continue Resevation</a>-->
+        <input type="submit" id="res" class="btn btn-info btn-lg"   value="Continue Resevation" />
+        
+        @endif
         </div>
 
 
 
-    </section>
+    </form> 
 
 
 
@@ -605,7 +622,7 @@
             <h2>open<br>1 day aweek<br>24 hours a day
          </div>
       
-      </section>          
+    </section>        
                 
 <!----------------------------------------------------------------------------------->
   <section class="footer" id="footer">
@@ -663,7 +680,7 @@ By accessing and/or using this code snippet, you agree to AccuWeather�s terms 
                 </div>
                     </div>
             </div>
-        </section>
+  </section>
    
 
 

@@ -12,7 +12,7 @@ class operation_controller extends Controller
     
     public function login(Request $request)
     {
-        session()->push('m','$name');
+        
         $name = $request->name;
         $password = $request->pass;
        
@@ -28,27 +28,19 @@ class operation_controller extends Controller
         $pass=$user['password'];
         $phone=$user['phone'];
         $email=$user['email'];
+        $type_id = $user['user_type_id'];
         if($pass == $password)
         {
            if(session_status() == PHP_SESSION_NONE)
            {
                session_start();
-               $_SESSION['logged_state'] = 1;
-               $_SESSION['username']= $name;
-               $_SESSION['phone']= $phone;
-               $_SESSION['email']= $email;
                
            }
-            else 
-             {
-               $_SESSION['logged_state'] = 1;
-               $_SESSION['username']=$name;
-               $_SESSION['phone']=$phone;
-               $_SESSION['email']=$email;
-             }
-            
-            
-           
+            $_SESSION['logged_state'] = 1;
+            $_SESSION['username']= $name;
+            $_SESSION['phone']= $phone;
+            $_SESSION['email']= $email;
+            $_SESSION['type_id'] = $type_id;
         }
         else                 
         {
@@ -65,5 +57,22 @@ class operation_controller extends Controller
        return view('pages.admin',  compact($user));
        
     }
-   
+    public function reserveation(Request $re)
+    {
+        $val1=$re->oneval;
+        $val2=$re->twoval;
+        $val3=$re->threeval;
+        
+        if($val1 == 0 && $val2== 0 && $val3 == 0)
+        {   
+            $this->throwValidationException($re ,0);
+        }
+        else 
+        {
+            //echo $val1;
+            //return view('ProController@reserve');
+          // return redirect()->action('ProController@reserve');
+        }
+        
+    }
 }

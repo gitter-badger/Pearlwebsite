@@ -93,5 +93,8 @@ $(function(){
             }
         });
     });
-    
+    /**************************/
+    $('#prof').click(function(){
+        location.href = 'profile';
+    });
 });

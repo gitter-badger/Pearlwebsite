@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <form role="form" id="signup" >
-
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="username" name="username" ><br>
                         <label style="color:red;" id="userdanger" ></label> 

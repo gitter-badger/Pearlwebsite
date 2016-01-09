@@ -18,7 +18,7 @@ Route::get('gallery', "RouteController@gallery" );
 Route::get('admin' , "RouteController@admin");
 Route::get('manager' , "RouteController@manager");
 Route::get('edit' , "RouteController@edit");
-Route::get('profile/{name}' , "RouteController@profile");
+Route::get('profile' , "RouteController@profile");
 /*Route::get('profile/{name}', function ($name){
     
     return view('pages.profile-page');
@@ -28,7 +28,7 @@ Route::get('receptionist' , "RouteController@receptionist");
 
 
 Route::post('login', "operation_controller@login");
-
+Route::post('serve', "operation_controller@reserveation");
 /*********************************************************/
 
 Route::post('signup',"operationController@signup");
