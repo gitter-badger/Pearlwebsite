@@ -28,27 +28,19 @@ class operation_controller extends Controller
         $pass=$user['password'];
         $phone=$user['phone'];
         $email=$user['email'];
+        $type_id = $user['user_type_id'];
         if($pass == $password)
         {
            if(session_status() == PHP_SESSION_NONE)
            {
                session_start();
-               $_SESSION['logged_state'] = 1;
-               $_SESSION['username']= $name;
-               $_SESSION['phone']= $phone;
-               $_SESSION['email']= $email;
                
            }
-            else 
-             {
-               $_SESSION['logged_state'] = 1;
-               $_SESSION['username']=$name;
-               $_SESSION['phone']=$phone;
-               $_SESSION['email']=$email;
-             }
-            
-            
-           
+            $_SESSION['logged_state'] = 1;
+            $_SESSION['username']= $name;
+            $_SESSION['phone']= $phone;
+            $_SESSION['email']= $email;
+            $_SESSION['type_id'] = $type_id;
         }
         else                 
         {

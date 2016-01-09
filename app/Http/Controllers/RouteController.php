@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use DB;
+use App\user_table;
 
 class RouteController extends Controller
 {
@@ -26,7 +28,17 @@ class RouteController extends Controller
     
     public function admin()
     {
-        return view('pages.admin-page');
+        if(session_status() == PHP_SESSION_NONE)
+        {
+            session_start();
+        }
+        if(isset($_SESSION['type_id']) && $_SESSION['type_id'] == 3)
+        {
+            return view('pages.admin-page');
+        }else
+        {
+            return view('errors.404');
+        }
     }
     
     public function edit()
@@ -41,7 +53,36 @@ class RouteController extends Controller
     
     public function profile()
     {
-        return view('pages.profile-page');
+         if(session_status() == PHP_SESSION_NONE)
+        {
+            session_start();
+        }
+      
+        if(isset($_SESSION['type_id']))
+        {
+            if($_SESSION['type_id'] == 1)
+            {
+                $user = $_SESSION;
+                return view('pages.profile-page', $user);
+            }else if($_SESSION['type_id'] == 2)
+            {
+                $user = $_SESSION;
+                return view('pages.manager',$user);
+            }else if($_SESSION['type_id'] == 3)
+            {
+                $user = $_SESSION;
+                return view('pages.admin-page',$user);
+            }else
+            {
+                $user = $_SESSION;
+                return view('pages.receptionist',$user);
+            }
+        }else
+        {
+            
+            return redirect()->action("RouteController@home");
+        }
+        
     }
     
     public function receptionist()

@@ -13,7 +13,7 @@
         <li text-center><a href="#" data-toggle="modal" data-target="#SignIn">Sign in</a></li>
         <li text-center><a href="#" data-toggle="modal" data-target="#SignUp">New Client</a></li>
         @else
-            <li text-center><a href="#" data-toggle="modal">{{ $_SESSION['username'] }}</a></li>
+            <li text-center id="prof"><a href="#" data-toggle="modal">{{ $_SESSION['username'] }}</a></li>
             <li text-center id="logout" ><a href="#" data-toggle="modal">Logout</a></li>
         @endif
     </ul>
