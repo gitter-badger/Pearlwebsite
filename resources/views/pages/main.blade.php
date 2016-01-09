@@ -396,6 +396,7 @@
                         <div class="form-group">
                             <h5>check in date:</h5>
                             {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control']) }}
+
                            @inject('hel',App\ourclass\formaction')
                            
                            <!-- <select class="form-control" id="sel1">
@@ -441,6 +442,10 @@
                                 <option> Mar 2015</option>
                                 <option>Apr 2015</option>
                             </select> -->
+
+                             @inject('form' , 'App\ourclass\formaction')
+                            {{ $form->show_MY('sell','rmonth') }} <!-- id , name -->
+
                         </div>
                     </div>
 
@@ -449,6 +454,7 @@
                         <form role="form">
                             <div class="form-group">
                                 <h5>check out date:</h5>
+
                                   
                                 <select class="form-control" id="sel1">
                                     <option selected="selected" name='dy'>day</option>
@@ -494,6 +500,10 @@
                                     <option>3</option>
                                     <option>4</option>
                                 </select>
+
+                                    {{ Form::selectRange('cday',1,31,null,['class'=>'form-control','id'=>'sel1']) }}
+                                    {{ $form->show_MY('mdc','cmonth') }}
+
                             </div>
                         </form>
                     </div>
@@ -584,9 +594,10 @@
                     </form>
                 </div>
             </div>
-           @if(session_status() == PHP_SESSION_NONE)
+
+          @if(session_status() == PHP_SESSION_NONE)
             <?php session_start(); ?>
-        @endif
+            @endif
         @if(!isset($_SESSION['logged_state']))
         <a href="#" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#SignUp">Continue Resevation</a>
         @else
@@ -594,6 +605,10 @@
         <input type="submit" id="res" class="btn btn-info btn-lg"   value="Continue Resevation" />
         
         @endif
+
+            
+        
+
         </div>
 
 

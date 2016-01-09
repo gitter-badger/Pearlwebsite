@@ -37,7 +37,8 @@ class RouteController extends Controller
         }
         if(isset($_SESSION['type_id']) && $_SESSION['type_id'] == 3)
         {
-            return view('pages.admin-page');
+            $user = $_SESSION;
+            return view('pages.admin-page',$user);
         }else
         {
             return view('errors.404');
@@ -51,7 +52,19 @@ class RouteController extends Controller
     
     public function manager()
     {
-        return view('pages.manager');
+         if(session_status() == PHP_SESSION_NONE)
+        {
+            session_start();
+        }
+        if(isset($_SESSION['type_id']) && $_SESSION['type_id'] == 2)
+        {
+            $user = $_SESSION;
+            return view('pages.manager' , $user);
+        }else
+        {
+            return redirect()->action("RouteController@home");
+        }
+        
     }
     
 
@@ -94,6 +107,19 @@ class RouteController extends Controller
     
     public function receptionist()
     {
-        return view('pages.receptionist');
+        if(session_status() == PHP_SESSION_NONE)
+        {
+            session_start();
+        }
+        if(isset($_SESSION['type_id']) && $_SESSION['type_id'] == 4)
+        {
+            $user = $_SESSION;
+            return view('pages.receptionist' , $user);
+        }else
+        {
+            
+            return redirect()->action("RouteController@home");
+        }
+        
     }
 }
