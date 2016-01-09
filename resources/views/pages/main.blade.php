@@ -395,8 +395,9 @@
                     <div class="reserve text-left">
                         <div class="form-group">
                             <h5>check in date:</h5>
-
-                            <select class="form-control" id="sel1">
+                            {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control']) }}
+                            
+                           <!-- <select class="form-control" id="sel1">
                                 <option selected="selected">day</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -428,17 +429,17 @@
                                 <option>29</option>
                                 <option>30</option>
                                 <option>31</option>
+                            </select> -->
 
-
-                            </select>
-
-                            <select class="form-control" id="sel1">
+                            {{ Form::selectMonth('rmonth',null,['class' => 'form-control','id' => 'sell']) }}
+                            
+                          <!--  <select class="form-control" id="sel1">
                                 <option selected="selected">M/y</option>
                                 <option>JAn 2015</option>
                                 <option>Feb 2015</option>
                                 <option> Mar 2015</option>
                                 <option>Apr 2015</option>
-                            </select>
+                            </select> -->
                         </div>
                     </div>
 
