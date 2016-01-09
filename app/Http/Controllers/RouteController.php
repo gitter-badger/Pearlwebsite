@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\user_table;
 class RouteController extends Controller
 {
     public function home()
@@ -39,10 +39,11 @@ class RouteController extends Controller
         return view('pages.manager');
     }
     
-    public function profile()
-    {
-        return view('pages.profile-page');
-    }
+    public function profile($name)
+    {   
+       return view('pages.profile-page', ['user' => user_table::find($name)]);
+        
+        }
     
     public function receptionist()
     {

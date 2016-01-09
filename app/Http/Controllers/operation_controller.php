@@ -56,15 +56,14 @@ class operation_controller extends Controller
         }
             
     }
-    /***********
+    
     public function  search_user(Request $re)
     {
         $this->validate($request , [
-         'name'  => 'required']);
+        'name'  => 'required']);
        $user=user_table::where('username',$name)->first();
-       return view('pages.admin.page.blade.php',  compact($user));
+       return view('pages.admin',  compact($user));
        
     }
-   **************/
    
 }
