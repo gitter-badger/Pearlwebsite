@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use DB;
 use App\user_table;
 
+
 class RouteController extends Controller
 {
     public function home()
