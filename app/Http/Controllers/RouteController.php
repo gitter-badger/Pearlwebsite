@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use DB;
 use App\user_table;
-
+use DB;
 
 class RouteController extends Controller
 {
@@ -65,6 +63,8 @@ class RouteController extends Controller
         
     }
     
+
+   
     public function profile()
     {
          if(session_status() == PHP_SESSION_NONE)
@@ -98,6 +98,8 @@ class RouteController extends Controller
         }
         
     }
+   
+
     
     public function receptionist()
     {

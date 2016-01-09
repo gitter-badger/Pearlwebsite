@@ -64,14 +64,21 @@
    <div class="row">  <!----------  start row ---------->
    
   <div class=" msg_confirm col-md-12 col-xs-12 ">
+      @if(session_status() == PHP_SESSION_NONE)
+            <?php session_start(); ?>
+        @endif
+        @if(!isset($_SESSION['logged_state']))
+             <?php session_start();?>
+        @else
     <p>We are ready to confirm your reservation. please review the reservation details below.</p>
-    <p>Reserved as : <span>username</span> <a>( not FIRSTNAME? Click here to change the user)</a></p>
+    <p>Reserved as : <span><?php echo $_SESSION['username']; ?></span> <a>( not FIRSTNAME? Click here to change the user)</a></p>
    </div>
     <div class="col-md-7 col-xs-12 ">
     <div class=" msg_confirm" >
-    <p>Email address : <span>guest@host.com</span></p>
-    <p>Phone number : <span>+20 000 000</span></p>
+    <p>Email address : <span><?php echo $_SESSION['email']; ?></span></p>
+    <p>Phone number : <span><?php echo $_SESSION['phone']; ?></span></p>
     </div>
+        @endif
     <table class="table confirm_info text-center">  <!----------  start first table  ---------->
          <tr class="info">
             <th> Room Type</th>

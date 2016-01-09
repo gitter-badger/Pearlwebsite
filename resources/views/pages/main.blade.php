@@ -379,7 +379,7 @@
     <!--   ------------------------------------------------------------------>
 
 
-    <section class="reservation" id="reservation">
+    <form class="reservation" id="reservation">
 
 
 
@@ -398,10 +398,11 @@
                             {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control']) }}
                              @inject('form' , 'App\ourclass\formaction')
                             {{ $form->show_MY('sell','rmonth') }} <!-- id , name -->
+
                         </div>
                     </div>
-
-
+                    
+                        
                     <div class="reserve text-left">
                         <form role="form">
                             <div class="form-group">
@@ -436,26 +437,25 @@
                             <tr class="danger">
 
                                 <td>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optradio">Single Room</label>
-                                    </div>
+                                    <p> Single Room</p>
 
                                     <h6>WIFI + Air Conditioning</h6></td>
                                 <td>
                                     <h5>US$ 50</h5></td>
                                 <td>
                                     <h5>One Person</h5></td>
-                                <td rowspan="3">
+                                <td rowspan="1">
 
-                                    <div class="form-group">
+                                    <input type="text" class="form-control" id="v1" name="oneval" value="0" ><br></br>
+                                        
+                                   <!-- <div class="form-group">
                                         <select class="form-control" id="sel1">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
                                             <option>4</option>
                                         </select>
-                                    </div>
+                                    </div>-->
 
 
                                 </td>
@@ -463,45 +463,62 @@
 
                             <tr class="danger">
                                 <td>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optradio">Double Room</label>
-                                    </div>
+                                    <p>Double Room</p>
                                     <h6>WIFI + Air Conditioning</h6></td>
                                 <td>
                                     <h5>US$ 60</h5></td>
                                 <td>
                                     <h5>Two Persons</h5></td>
+                                <td rowspan="1">
+                                    <input type="text" class="form-control" id="v2" name="twoval" value="0" >
+                                       
+                                </td>
 
                             </tr>
 
                             <tr class="danger">
                                 <td>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optradio">Tribble Room</label>
-                                    </div>
+                                    <p> Tribble Room</p>
                                     <h6>WIFI + Air Conditioning</h6></td>
                                 <td>
                                     <h5>US$ 70</h5></td>
                                 <td>
                                     <h5>Three Persons</h5></td>
-
+                                
+                                <td rowspan="1">
+                                    <input type="text" class="form-control" id="v3" name="threeval" value="0" >
+                                       <!-- <label id="we-danger" ></label>-->
+                                       
+                                </td>
+                               
                             </tr>
 
 
                         </table>
+                        <label id="we" style="color: red" ></label>
                     </form>
                 </div>
             </div>
 
-            <a href="reserve" class="btn btn-info btn-lg" role="button" target=_blank>Continue Resevation</a> 
+          @if(session_status() == PHP_SESSION_NONE)
+            <?php session_start(); ?>
+            @endif
+        @if(!isset($_SESSION['logged_state']))
+        <a href="#" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#SignUp">Continue Resevation</a>
+        @else
+      <!--  <a href="reserve" id="res" class="btn btn-info btn-lg" role="button" target=_blank>Continue Resevation</a>-->
+        <input type="submit" id="res" class="btn btn-info btn-lg"   value="Continue Resevation" />
         
+        @endif
+
+            
+        
+
         </div>
 
 
 
-    </section>
+    </form> 
 
 
 
@@ -525,7 +542,7 @@
             <h2>open<br>1 day aweek<br>24 hours a day
          </div>
       
-      </section>          
+    </section>        
                 
 <!----------------------------------------------------------------------------------->
   <section class="footer" id="footer">
@@ -583,7 +600,7 @@ By accessing and/or using this code snippet, you agree to AccuWeather�s terms 
                 </div>
                     </div>
             </div>
-        </section>
+  </section>
    
 
 

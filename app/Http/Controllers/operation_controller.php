@@ -12,7 +12,7 @@ class operation_controller extends Controller
     
     public function login(Request $request)
     {
-        session()->push('m','$name');
+        
         $name = $request->name;
         $password = $request->pass;
        
@@ -48,15 +48,31 @@ class operation_controller extends Controller
         }
             
     }
-    /***********
+    
     public function  search_user(Request $re)
     {
         $this->validate($request , [
-         'name'  => 'required']);
+        'name'  => 'required']);
        $user=user_table::where('username',$name)->first();
-       return view('pages.admin.page.blade.php',  compact($user));
+       return view('pages.admin',  compact($user));
        
     }
-   **************/
-   
+    public function reserveation(Request $re)
+    {
+        $val1=$re->oneval;
+        $val2=$re->twoval;
+        $val3=$re->threeval;
+        
+        if($val1 == 0 && $val2== 0 && $val3 == 0)
+        {   
+            $this->throwValidationException($re ,0);
+        }
+        else 
+        {
+            //echo $val1;
+            //return view('ProController@reserve');
+          // return redirect()->action('ProController@reserve');
+        }
+        
+    }
 }
