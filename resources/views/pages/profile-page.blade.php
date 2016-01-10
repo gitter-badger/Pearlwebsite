@@ -5,16 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Profile</title>
-<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-   <link rel="stylesheet" href="css/normalize.css" type="text/css">
-   <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" type="text/css">
 
-<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="{{ asset('/css/bootstrap.css') }}" type="text/css"> 
+<link rel="stylesheet" href="{{ asset('/css/normalize.css') }}" type="text/css">
+<link rel="stylesheet" href="{{ asset('/css/bootstrap-datetimepicker.min.css') }}" type="text/css">
+
+<link rel="stylesheet" href="{{asset('/css/font-awesome.min.css')}}" type="text/css">
 <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/style.css" type="text/css">
-   <link rel="stylesheet" href="css/user-profile-style.css" type="text/css">
-    <link rel="stylesheet" href="css/media.css" type="text/css">
-    <link rel="icon" href="images/pb.png">
+<link rel="stylesheet" href="{{ asset('/css/style.css') }}" type="text/css">
+<link rel="stylesheet" href="{{ asset('/css/user-profile-style.css') }}" type="text/css">
+<link rel="stylesheet" href="{{ asset('/css/media.css') }}" type="text/css">
+<link rel="icon" href="{{ asset('/images/pb.png') }}">
 
    
    <!--[if lt IE 9]>
@@ -47,7 +48,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><img src="images/pb.png"></a>
+                <a class="navbar-brand" href="/"><img src="{{ asset('/images/pb.png') }}"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -115,11 +116,11 @@
                         <h2>Your Profile</h2>
                         <div class="profile-content">
                         <div class="pro-header text-left">
-                           <img src="images/person.png" class="img-thumbnail">
+                           <img src="{{ asset('/images/person.png') }}" class="img-thumbnail">
                                           <div class="main-info">
-                                 <p>Name :  {{ $username }} </p>
+                                 <p>Name : {{   $username }} </p>
                                  <p>Phone : {{ $phone }} </p>
-                                 <p>Email : {{ $email }} </p>
+                                 <p>Email : {{ $email }}  </p>
                                  <button class="btn btn-info btn-sm">Change Photo</button>
                                        
                             </div>          
@@ -503,10 +504,10 @@ By accessing and/or using this code snippet, you agree to AccuWeather�s terms 
             <div class="copyright text-center">
                 <div class="container-fluid">
                 <div class="pearl col-md-6 col-sm-6 col-xs-12">
-                All Rights Reserved &copy <span><img src="images/logo.png" width="50"></span>
+                All Rights Reserved &copy <span><img src="{{ asset('/images/logo.png') }}" width="50"></span>
                 </div>
                 <div class="aptware col-md-6 col-sm-6 col-xs-12">
-                Designed and Developed By &trade;<span><a href="http://www.apt-ware.com" target="_blank"><img src="images/Aptware.png" width="80"></a></span>
+                Designed and Developed By &trade;<span><a href="http://www.apt-ware.com" target="_blank"><img src="{{ asset('images/Aptware.png') }}" width="80"></a></span>
                 </div>
                     </div>
             </div>
@@ -516,12 +517,12 @@ By accessing and/or using this code snippet, you agree to AccuWeather�s terms 
 
 
 
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/signupAction.js"></script>
-<script src="js/action.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/moment.js"></script>
+<script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/signupAction.js') }}"></script>
+<script src="{{ asset('js/action.js') }}"></script>
+<script src="{{ asset('js/plugins.js') }}"></script>
+<script src="{{ asset('js/moment.js') }}"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   

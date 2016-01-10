@@ -379,7 +379,7 @@
     <!--   ------------------------------------------------------------------>
 
 
-    <form class="reservation" id="reservation">
+    <form class="reservation" id="reservatio">
 
 
 
@@ -395,13 +395,13 @@
                     <div class="reserve text-left">
                         <div class="form-group">
                             <h5>check in date:</h5>
-                            {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control']) }}
+                            {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control', 'id' => 'rday']) }}
                              @inject('form' , 'App\ourclass\formaction')
                             {{ $form->show_MY('sell','rmonth') }} <!-- id , name -->
 
                         </div>
                     </div>
-                    
+                  
                         
                     <div class="reserve text-left">
                         <form role="form">
@@ -416,7 +416,7 @@
 
                 <div class="col-md-4">
 
-                    <button class="btn-primary btn-sm">Check Availability</button>
+                    <button type="button" class="btn-primary btn-sm" id="chechAv" >Check Availability</button>
 
                 </div>
 

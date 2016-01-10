@@ -11,20 +11,22 @@
 |
 */
 use Illuminate\Http\Request;
-
+/*Route::get('user/{username}', function($username){
+    if(session_status() == PHP_SESSION_NONE)
+    {
+        session_start();
+    }
+    $user = $_SESSION;
+    return view('pages.profile-page' , $user);
+});*/
 Route::get('/',"RouteController@home");
 Route::get('reserve', "RouteController@reserve");
 Route::get('gallery', "RouteController@gallery" );
 Route::get('admin' , "RouteController@admin");
 Route::get('manager' , "RouteController@manager");
 Route::get('edit' , "RouteController@edit");
-Route::get('profile' , "RouteController@profile");
-/*Route::get('profile/{name}', function ($name){
-    
-    return view('pages.profile-page');
-});*/
+Route::get('profile/{username?}' , "RouteController@profile");
 Route::get('receptionist' , "RouteController@receptionist");
-
 
 
 Route::post('login', "operation_controller@login");
@@ -33,6 +35,7 @@ Route::post('serve', "operation_controller@reserveation");
 
 Route::post('signup',"operationController@signup");
 Route::post('logout' , "operationController@logout");
+Route::post('checkAvailability', "operationController@checkAvailability" );
 
 
 /*
