@@ -97,4 +97,10 @@ $(function(){
     $('#prof').click(function(){
         location.href = 'profile';
     });
+    
+    
+    $('#cont-form').submit(function(e){
+        e.preventDefault();
+        alert("contact submitted");
+    });
 });
