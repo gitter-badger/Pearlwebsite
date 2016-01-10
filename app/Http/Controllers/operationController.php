@@ -172,8 +172,10 @@ class operationController extends Controller
             $triple_room = -2;
         }
         
-        var_dump($room_av = array($single_room , $double_room ,$triple_room));
+        //var_dump();
+        $room_av = array($single_room , $double_room ,$triple_room);
         $req_av = array((int)$request->single , (int)$request->double , (int)$request->tripple);
+        
         for($i = 0;$i < 3;$i++)
         {
             if($room_av[$i] != -2)

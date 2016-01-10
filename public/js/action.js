@@ -61,6 +61,7 @@ $(document).ready(function(){
                location.href= "reserve";
            },
            error: function(data){
+               $('#we').css({"color":"red"});
                $('#we').html("Enter number of rooms");
            }
        });
@@ -80,6 +81,7 @@ $(document).ready(function(){
        
        if(sroom == 0 && droom == 0 && troom == 0)
        {
+           $('#we').css({"color":"red"});
            $('#we').html("Enter number of rooms");
        }else
        {
@@ -98,7 +100,17 @@ $(document).ready(function(){
                    monthout: mchechout
                },
                success:function(data){
-                   alert(data);
+                   //alert(data);
+                   if(data == 1)
+                   {
+                      $('#we').css({"color":"green"});
+                      $('#we').html("Available"); 
+                   }else
+                   {
+                      $('#we').css({"color":"red"});
+                      $('#we').html("Not Available"); 
+                   }
+                   
                },
                error:function(data){
                    var err = data.responseJSON;
