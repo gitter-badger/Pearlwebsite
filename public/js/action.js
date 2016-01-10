@@ -18,7 +18,16 @@ $(document).ready(function(){
 
                 $('#we-danger').html("");
                 $('#be-danger').html("");
-                location.reload();
+                if(data != 0)
+                {
+                    $('#signin-danger').html("");
+                    $('#signin-succ').html("Logged in Successfully");
+                    location.reload();
+                }else
+                {
+                    $('#signin-danger').html("Username and password are not correct");
+                }
+                
             },
             error: function(data){
                 var error = data.responseJSON;
