@@ -19,7 +19,7 @@
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="">Remember Me</label>
+                                            {{ Form::checkbox('ks',null,null, array('id'=>'kk')) }} Remmber ME </label> 
                                     </div>
 
                                     <a href="#">Forget Password</a><br> <br>

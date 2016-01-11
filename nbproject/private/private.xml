@@ -3,8 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/opt/lampp/htdocs/pearl/resources/views/layout/signup.blade.php</file>
-            <file>file:/opt/lampp/htdocs/pearl/resources/views/pages/main.blade.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/resources/views/layout/signup.blade.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/public/js/action.js</file>
+            <file>file:/opt/lampp/htdocs/pearlo/public/js/signupAction.js</file>
+            <file>file:/opt/lampp/htdocs/pearlo/resources/views/layout/signin.blade.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/resources/views/pages/manager.blade.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/resources/views/pages/admin-page.blade.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/app/Http/Controllers/operation_controller.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/app/Http/Controllers/RouteController.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/resources/views/layout/update.blade.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/resources/views/pages/profile-page.blade.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/app/Http/routes.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/app/Http/Controllers/operationController.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/resources/views/layout/adduser.blade.php</file>
         </group>
     </open-files>
 </project-private>

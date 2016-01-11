@@ -395,7 +395,7 @@
                     <div class="reserve text-left">
                         <div class="form-group">
                             <h5>check in date:</h5>
-                            {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control']) }}
+                            {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control','id'=>'sel1']) }}
 
                            @inject('hel',App\ourclass\formaction')
                            
@@ -433,7 +433,7 @@
                                 <option>31</option>
                             </select> -->
 
-                            {{ Form::selectMonth('rmonth',null,['class' => 'form-control','id' => 'sell']) }}
+                            
                             
                           <!--  <select class="form-control" id="sel1">
                                 <option selected="selected">M/y</option>
@@ -456,11 +456,7 @@
                                 <h5>check out date:</h5>
 
                                   
-                                <select class="form-control" id="sel1">
-                                    <option selected="selected" name='dy'>day</option>
-                                    <?php for($i=1;$i<=31;$i++){?>
-                                    <option value="<?php $i ?>"><?php echo $i?></option>
-                                    <?php }?>
+                               
                                     <!--<option>2</option>
                                     <option>3</option>
                                     <option>4</option>
@@ -492,16 +488,9 @@
                                     <option>31</option>-->
                                 </select>
 
-                                <select class="form-control" id="sel1">
-                                    <option selected="selected">M/y</option>
-                                    
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
+                                
 
-                                    {{ Form::selectRange('cday',1,31,null,['class'=>'form-control','id'=>'sel1']) }}
+                                    {{ Form::selectRange('cday',1,31,null,['class'=>'form-control','id'=>'sel2']) }}
                                     {{ $form->show_MY('mdc','cmonth') }}
 
                             </div>
