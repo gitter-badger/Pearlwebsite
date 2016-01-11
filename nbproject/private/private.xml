@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/opt/lampp/htdocs/pearlo/resources/views/layout/signup.blade.php</file>
             <file>file:/opt/lampp/htdocs/pearlo/resources/views/pages/admin-page.blade.php</file>
@@ -14,5 +15,8 @@
             <file>file:/opt/lampp/htdocs/pearlo/app/Http/routes.php</file>
             <file>file:/opt/lampp/htdocs/pearlo/app/Http/Controllers/operationController.php</file>
         </group>
+=======
+        <group/>
+>>>>>>> eb300798846e25475b6b8b588a2385992eb56e67
     </open-files>
 </project-private>

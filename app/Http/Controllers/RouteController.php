@@ -3,14 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\user_table;
-
 use DB;
-
 
 class RouteController extends Controller
 {
@@ -69,38 +65,55 @@ class RouteController extends Controller
     
 
    
-    public function profile()
+    public function profile($username = null)
     {
-         if(session_status() == PHP_SESSION_NONE)
+        
+        if(session_status() == PHP_SESSION_NONE)
         {
             session_start();
         }
-      
-        if(isset($_SESSION['type_id']))
+        if($username == null)
         {
-            if($_SESSION['type_id'] == 1)
+            if(isset($_SESSION['type_id']))
             {
-                $user = $_SESSION;
-                return view('pages.profile-page', $user);
-            }else if($_SESSION['type_id'] == 2)
-            {
-                $user = $_SESSION;
-                return view('pages.manager',$user);
-            }else if($_SESSION['type_id'] == 3)
-            {
-                $user = $_SESSION;
-                return view('pages.admin-page',$user);
+                if($_SESSION['type_id'] == 1)
+                {
+                    $user = $_SESSION;
+                    return view('pages.profile-page', $user);
+                }else if($_SESSION['type_id'] == 2)
+                {
+                    $user = $_SESSION;
+                    return view('pages.manager',$user);
+                }else if($_SESSION['type_id'] == 3)
+                {
+                    $user = $_SESSION;
+                    return view('pages.admin-page',$user);
+                }else
+                {
+                    $user = $_SESSION;
+                    return view('pages.receptionist',$user);
+                }
             }else
             {
-                $user = $_SESSION;
-                return view('pages.receptionist',$user);
+
+                return redirect()->action("RouteController@home");
             }
         }else
         {
-            
-            return redirect()->action("RouteController@home");
+            $profile = DB::table('user_table')->where('username',$username)->first();
+            if(isset($profile) && $profile->user_type_id == 1)
+            {
+                 $p = array(
+                'username' => "$profile->username" ,
+                'email' => $profile->email , 
+                'phone' => $profile->phone
+                );
+                return view('pages.profile-page', $p );
+            }else
+            {
+                return view('errors.404');
+            }
         }
-        
     }
    
 
@@ -120,6 +133,5 @@ class RouteController extends Controller
             
             return redirect()->action("RouteController@home");
         }
-        
     }
 }

@@ -42,12 +42,13 @@ class operation_controller extends Controller
             $_SESSION['phone']= $phone;
             $_SESSION['email']= $email;
             $_SESSION['type_id'] = $type_id;
+            return 1;
         }
         else                 
         {
             return 0;
         }
-            
+        
     }
     
     public function  search_user(Request $re)
