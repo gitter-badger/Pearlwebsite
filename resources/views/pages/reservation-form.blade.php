@@ -72,13 +72,19 @@
         @else
     <p>We are ready to confirm your reservation. please review the reservation details below.</p>
     <p>Reserved as : <span><?php echo $_SESSION['username']; ?></span> <a>( not FIRSTNAME? Click here to change the user)</a></p>
-   </div>
+  </div>
     <div class="col-md-7 col-xs-12 ">
     <div class=" msg_confirm" >
     <p>Email address : <span><?php echo $_SESSION['email']; ?></span></p>
     <p>Phone number : <span><?php echo $_SESSION['phone']; ?></span></p>
     </div>
         @endif
+        @if(session_status() == PHP_SESSION_NONE)
+            <?php session_start(); ?>
+        @endif
+        @if(!isset($_SESSION['logged_state']))
+             <?php session_start();?>
+        @else 
     <table class="table confirm_info text-center">  <!----------  start first table  ---------->
          <tr class="info">
             <th> Room Type</th>
@@ -89,28 +95,85 @@
          </tr>
          <tr class="danger">
             <td><p>Single Room</p></td>
-            <td><p>3</p></td>
-            <td><p>1,000 L.E</p></td>
-            <td><p>2</p></td>
-            <td><p>6,000 L.E</p></td>
+            <td><p><?php echo $_SESSION['val1'] ?></p></td>
+            <td><p>50 $</p></td>
+            <td><p><?php if($_SESSION['lock'] == 1 )
+            {
+            echo  $_SESSION['all_days'];
+            }
+            else if($_SESSION['lock'] == 0)
+            {
+                echo $_SESSION['inwit'];  
+            }
+            
+                ?></p></td>
+            <td><p><?php if($_SESSION['lock'] == 1 )
+            {
+            echo  $_SESSION['tot'];
+            }
+            else if($_SESSION['lock'] == 0)
+            {
+                echo $_SESSION['to'];  
+            }
+            
+                ?></p></td>
          </tr>
          
          <tr class="danger">
             <td><p>Double Room</p></td>
-            <td><p>3</p></td>
-            <td><p>1,500 L.E</p></td>
-            <td><p>2</p></td>
-            <td><p>3,000 L.E</p></td>
+            <td><p><?php echo $_SESSION['val2'] ?></p></td>
+            <td><p>60 $</p></td>
+            <td><p><?php if($_SESSION['lock'] == 1 )
+            {
+            echo  $_SESSION['all_days'];
+            }
+            else if($_SESSION['lock'] == 0)
+            {
+                echo $_SESSION['inwit'];  
+            }
+            
+                ?></p></td>
+            <td><p><?php if($_SESSION['lock'] == 1 )
+            {
+                  $_SESSION['tot2'];
+                
+            }
+            else if($_SESSION['lock'] == 0)
+            {
+                echo $_SESSION['to2'];  
+            }
+            
+                ?></p></td>
          </tr>
-         
+            
           <tr class="danger">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><strong><p>9,000 L.E</p></strong></td>
+            <td>Third-Room</td>
+            <td><?php echo $_SESSION['val3']?></td>
+            <td>70 $</td>
+            <td><?php if($_SESSION['lock'] == 1 )
+            {
+            echo  $_SESSION['all_days'];
+            }
+            else if($_SESSION['lock'] == 0)
+            {
+                echo $_SESSION['inwit'];  
+            }
+            
+                ?></td>
+           
+            <td><strong><p><?php if($_SESSION['lock'] == 1 )
+            {
+            echo  $_SESSION['tot3'];
+            }
+            else if($_SESSION['lock'] == 0)
+            {
+                echo $_SESSION['to3'];  
+            }
+            
+                ?></p></strong></td>
          </tr>
-   </table> <!----------  end first table  ---------->
+   </table> 
+        @endif<!----------  end first table  ---------->
 </div>
    <div class="pyment_info col-md-5 col-xs-12 ">
       <table class="table "> <!----------  start second table  ---------->
@@ -179,7 +242,16 @@
    </div>
     <div class="taxes col-xs-12 ">
     <p><strong>Taxes (7%):</strong> 630 L.E</p>
-    <p><strong>Total :</strong> <span>9,630 L.E</span> </p>
+    <p><strong>Total :</strong> <span><?php if($_SESSION['lock'] == 1 )
+            {
+            echo  $_SESSION['all_tot']+78.75 ;
+            }
+            else if($_SESSION['lock'] == 0)
+            {
+                echo $_SESSION['all_to'] +78.75;  
+            }
+            
+                ?></span> </p>
    </div>
     <div class="button text-center">
       <div class="btn btn-danger">Cancel</div>

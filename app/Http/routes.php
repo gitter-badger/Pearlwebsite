@@ -19,16 +19,16 @@ Route::get('admin' , "RouteController@admin");
 Route::get('manager' , "RouteController@manager");
 Route::get('edit' , "RouteController@edit");
 Route::get('profile' , "RouteController@profile");
-/*Route::get('profile/{name}', function ($name){
-    
-    return view('pages.profile-page');
-});*/
 Route::get('receptionist' , "RouteController@receptionist");
 
 
 
 Route::post('login', "operation_controller@login");
 Route::post('serve', "operation_controller@reserveation");
+Route::post('upph',"operation_controller@upph" );
+Route::post('uppaw', 'operation_controller@uppaw');
+Route::post('dele', 'operation_controller@delone');
+Route::post('add', 'operation_controller@addone');
 /*********************************************************/
 
 Route::post('signup',"operationController@signup");

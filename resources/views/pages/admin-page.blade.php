@@ -130,7 +130,7 @@
                  
                       </div>
                           
-                                                    <h2>Search for User</h2>
+                                                   <h2>Search for User</h2>
                           <div class="search-cont">
                               <p class="lead">
                                   Please Enter Customer's Email To Find Him
@@ -159,7 +159,7 @@
                <div class="edit-profile">
             <h2>Edit profile data :</h2>
             <div class="update">
-            <form role="form">
+            <!--<form role="form">
                <div class="form-group">
                   <label for="usr"> Update Phone:</label>
                   <input type="text" class="form-control" id="usr">
@@ -191,18 +191,7 @@
          <h2>Update Password :</h2>
             <div class="update">
             <form role="form">
-                <div class="form-group">
-                  <label for="usr"> Your UserName:</label>
-                  <input type="text" class="form-control" id="usr">
-               </div>
-               
-               
-               
-               <div class="form-group">
-                  <label for="usr"> Old Password:</label>
-                  <input type="password" class="form-control" id="pwd">
-               </div>
-               
+                
                <div class="form-group">
                   <label for="usr"> New Password:</label>
                   <input type="password" class="form-control" id="pwd">
@@ -218,8 +207,8 @@
                <button class="btn-warning btn-sm" id="confirm">Confirm Password</button>
 
             </form>
-            
-         
+            -->
+           @include('layout.update')
          
          
       </div>
@@ -235,25 +224,27 @@
 
 
                 <div class="tab-pane fade text-center" id="add">
-                        <h2>Add Room</h2>
-                        <form role="form" class="room">
-                <div class="form-group">
-            <label for="sel1">Room Type:</label>
-            <select class="form-control" id="sel1">
-              <option>Single</option>
-              <option>Double</option>
-              <option>Suit</option>
-            </select>
-            </div>
-              <div class="form-group">
-               <label for="usr"> Number Of Rooms:</label>
-               <input type="text" class="form-control" id="usr">
-             </div>
-                   <input type="submit" class="btn btn-sm btn-success" value="Add Room">
-                   
+                <h2>Add Room</h2>
+                <form role="form" class="room" id="ad">
+                    <div class="form-group">
+                        <label for="sel1">Room Type:</label>
+                        <select class="form-control" name="sw" id="sel1">
+                            <option value="1">Single</option>
+                            <option value="2">Double</option>
+                            <option value="3">Suit</option> 
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="usr"> Number Of Rooms:</label>
+                        <input type="text" name="num" class="form-control" id="ads">
+                        <br/>
+                        <label id="ee" style="color: red"></label>
+                    </div>
+                    <input type="submit" class="btn btn-sm btn-success" value="Add Room">
+                    <br/>
                 </form>  
                         
-                    <h2>Add Payment Method</h2>
+                   <!-- <h2>Add Payment Method</h2>
                     <form rol="form" class="pay">
                         <div class="form-group">
                <label for="usr"> Name Of Payment Method:</label>
@@ -270,7 +261,7 @@
              </div>
                    <input type="submit" class="btn btn-sm btn-success" value="Add Social Link">
                          
-                    </form>
+                    </form>-->
                 </div>
                      
                     
@@ -279,24 +270,25 @@
                     
                 <div class="tab-pane fade text-center" id="remove">
                         <h2>Delete Room</h2>
-                        <form role="form" class="room">
+                        <form role="form" class="room" id="del">
                 <div class="form-group">
             <label for="sel1">Room Type:</label>
-            <select class="form-control" id="sel1">
-              <option>Single</option>
-              <option>Double</option>
-              <option>Suit</option>
+            <select class="form-control" name="fw"id="sel2">
+                <option value="1">Single</option>
+                <option value="2">Double</option>
+                <option value="3">Suit</option>
             </select>
             </div>
               <div class="form-group">
                <label for="usr"> Number Of Rooms:</label>
-               <input type="text" class="form-control" id="usr">
+                <input type="text" name="nums" class="form-control" id="ade">
+                     <label id="vv" style="color: red"></label>
              </div>
                    <input type="submit" class="btn btn-sm btn-danger" value="Delete Room">
                    
                 </form>  
                         
-                    <h2>Delete Payment Method</h2>
+                   <!-- <h2>Delete Payment Method</h2>
                     <form rol="form" class="pay">
                         <div class="form-group">
                <label for="usr"> Name Of Payment Method:</label>
@@ -313,7 +305,7 @@
              </div>
                    <input type="submit" class="btn btn-sm btn-danger" value="Delete Social Link">
                          
-                    </form>
+                    </form>-->
                 </div>
                      </div>
                          

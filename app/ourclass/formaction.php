@@ -2,7 +2,7 @@
 
 
 namespace App\ourclass;
-
+use App\Http\Controllers\operationController;
 class formaction {
     
      public function show_MY($id,$name)
@@ -28,7 +28,7 @@ class formaction {
          for($i = $nm;$i <= 12;$i++)
          {
                 $m = $month[$i];
-                echo '<option value="'.$m.''.$ny.'">'.$m.' '.$ny.'</option>';
+                echo '<option value="'.$m.' '.$ny.'">'.$m.' '.$ny.'</option>';
                 $count++;     
                 if ($i == 12 && $count < 12)
                 {
@@ -36,11 +36,13 @@ class formaction {
                     for($i = 1; $i <= (12-$count);$i++)
                     {
                         $m = $month[$i];
-                        echo '<option value="'.$m.''.$ny.'">'.$m.' '.$ny.'</option>';
+                        echo '<option value="'.$m.' '.$ny.'">'.$m.' '.$ny.'</option>';
                     }
                     $i = 12;
                 }
          }
          echo "</select>";
     }
+ 
+   
 }
