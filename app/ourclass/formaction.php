@@ -2,7 +2,6 @@
 
 
 namespace App\ourclass;
-
 use App\Http\Controllers\operationController;
 use DB;
 

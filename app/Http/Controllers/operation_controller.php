@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\user_table;
+use App\table_rooms;
+
+
+use DB;
 
 class operation_controller extends Controller
 {
@@ -16,20 +20,26 @@ class operation_controller extends Controller
         
         $name = $request->name;
         $password = $request->pass;
+        $chek=$request->ks;
        
         
         $this->validate($request , [
     		'name'  => 'required',  
     		'pass'  => 'required'
     	]);
+           
        /* $user_name=user_table::find($name);
         $pass=  user_table::find($password);*/
+        
         $user=user_table::where('username',$name)->first();
         $name=$user['username'];
+        $id=$user['id'];
         $pass=$user['password'];
         $phone=$user['phone'];
         $email=$user['email'];
         $type_id = $user['user_type_id'];
+       
+        
         if($pass == $password)
         {
            if(session_status() == PHP_SESSION_NONE)
@@ -37,43 +47,43 @@ class operation_controller extends Controller
                session_start();
                
            }
+           if($chek == 'true')
+            {   
+              session_set_cookie_params('6048000'); 
+		session_regenerate_id(true);
+             }
             $_SESSION['logged_state'] = 1;
             $_SESSION['username']= $name;
             $_SESSION['phone']= $phone;
             $_SESSION['email']= $email;
             $_SESSION['type_id'] = $type_id;
+            
+ 
             return 1;
         }
         else                 
         {
             return 0;
+
+        }
+            
+
         }
         
-    }
+    
     
     public function  search_user(Request $re)
     {
         $this->validate($request , [
         'name'  => 'required']);
        $user=user_table::where('username',$name)->first();
-       return view('pages.admin',  compact($user));
-       
+       //return view('pages.admin',  compact($user));
+       return $user;
     }
     public function reserveation(Request $re)
     {
      
         $op = new operationController();
-       
-       /* $request = (object)array(
-            'single' => $re->oneval,
-            'double' => $re->twoval,
-            'tripple'=> $re->threeval,
-            
-            'dayin' => $re->rday,
-            'monthin' => $re->rmonth,
-            'dayout' =>  $re->cday,
-            'monthout' => $re->cmonth,
-        );*/
         $re->request->add([
             'single' => $re->oneval,
             'double' => $re->twoval,
@@ -164,22 +174,15 @@ class operation_controller extends Controller
                      
                     $all_to=$to + $to2 +$to3;
                       $_SESSION['all_to']=$all_to;
-                        
-                        
-                        
                       $_SESSION['lock']='0';
-                     
              }
-             
               else
              {
-                 
                  foreach ($month as $mo)
                  {
                      if($mo == $in_all[0] )
                      {
                          $in_key= key($month)-1;
-                        
                      }
                  }
                    foreach ($month as $mo)
@@ -194,10 +197,9 @@ class operation_controller extends Controller
                  $year=  abs($in_all[1]-$out_all[1]);
                  $day=abs($in_day-$out_day);
                  $all_days=($mo +$day)-1;
-                  $_SESSION['all_days']=$all_days;
+                 $_SESSION['all_days']=$all_days;
                  if($year >= 0 && $year <= 1)
                  {
-                    
                         $tot=$val1 * $all_days * 50;
                         $_SESSION['tot']=$tot;
                        
@@ -205,25 +207,17 @@ class operation_controller extends Controller
                          $_SESSION['tot2']=$tot2;
                          
                            $tot3=$val3 * $all_days * 70;
-                           $_SESSION['tot3']=$to3;
+                           $_SESSION['tot3']=$tot3;
                            
                       $all_tota=$tot+$tot2+$tot3;
                          $_SESSION['all_tot']=$all_tota;
                          $_SESSION['lock']=1;
                      /************Session***********/
-                 
-                      
-                     
-                     
-                     
-                     }
-             }
+                }
+            }
             
-            
-          
-        }
-        
     }
+}
     public function upph(Request $re )
     {
      $val1=$re->fo1;
@@ -280,8 +274,16 @@ class operation_controller extends Controller
              
         ]);
          
-         $ud=array($val5 ,$val6);
-        return $ud;
+        for($i=0;$i<$val6;$i++)
+        {
+            DB::table('table_rooms')->insert([
+                'room_type_id'=> $val5,
+                'room_state'=> 1
+            ]);
+            
+            
+        }
+        return "rooms added sucssefully" ; 
         
     }
      public function delone(Request $re)
@@ -295,6 +297,48 @@ class operation_controller extends Controller
          
          $ud=array($val5 ,$val6);
         return $ud;
+        
+    }
+
+     public function adduser(Request $request)
+    {
+        $userType=$request->type;
+        $username = $request->username;
+        $email = $request->email;
+        $gender = $request->gender;
+        $day = $request->day;
+        $month = $request->month;
+        $year = $request->year;
+        $phone = $request->phone;
+        $password = $request->password;
+        $confpass = $request->confirmpassword;
+        
+        $this->validate($request, [
+            'username' => 'required | unique:user_table',
+            'email' => 'required | email | unique:user_table',
+            'gender' => 'required',
+            'day' => 'required',
+            'month' => 'required',
+            'year' => 'required',
+            'phone' => 'required | numeric',
+            'password' => 'required',
+            'confirmpassword' => 'required | same:password',
+        ]);
+       
+        $birthday = "$year-$month-$day";
+       
+       
+        $result = DB::table('user_table')->insert([
+            'username' => $username,
+            'birthday' => $birthday,
+            'gender'   => $gender,
+            'email'    => $email,
+            'password' => $password,
+            'phone'    => $phone,
+            'user_type_id' => $userType
+        ]);
+        
+        return " user add sucssesfully ";
         
     }
 }

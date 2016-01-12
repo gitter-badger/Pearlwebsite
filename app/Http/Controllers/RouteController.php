@@ -22,7 +22,19 @@ class RouteController extends Controller
     
     public function reserve()
     {
-        return view('pages.reservation-form');
+         if(session_status() == PHP_SESSION_NONE)
+        {
+            session_start();
+        }
+        if (isset($_SESSION['lock']))
+        {
+        return view("pages.reservation-form");
+            
+        }else
+        {
+        
+        return view('errors.404');
+        }
     }
     
     public function admin()

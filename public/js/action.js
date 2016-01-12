@@ -38,6 +38,7 @@ $(document).ready(function(){
                         $('#we-danger').html("");
                 }
 
+
                 if (error.hasOwnProperty('pass'))
                 {
                         $('#be-danger').html("Enter passowrd");
@@ -74,19 +75,18 @@ $(document).ready(function(){
                         $('#we').html("");
                         location.href= "reserve";
                     },
-                    error: function(data){
-                           
+                    error: function(data){                           
                            $('#we').css({"color":"red"});
                            $('#we').html("Fill information correctly");
+
                     }
                 });
         return false;
    }); 
 
-
-
-
+   
 $('#chechAv').click(function(){
+
        var sroom = $('#v1').val();
        var droom = $('#v2').val();
        var troom = $('#v3').val();
@@ -140,7 +140,7 @@ $('#chechAv').click(function(){
        }
 });
 
-    /***************/
+
     
     $('#uppe').submit(function()
    { 
@@ -202,11 +202,7 @@ $('#chechAv').click(function(){
                                     }
 
                     }
-                });
-                    
-       
-            
-                  
+                });  
    return false;
 });
 
@@ -251,8 +247,6 @@ $('#uppas').submit(function()
                                     }else{
                                             $('#aa').html("");
                                     }
-
-                                    
 
                     }
                 });
@@ -367,22 +361,22 @@ $('#ad').submit(function()
                     
                     success:function(data){
                       // alert(name , pass);
-                     
+                      alert(data);
                         $('#ads').val('');
-                       
-                             
+                       $('#es').html("");
+                            $('#subsuw').val(data); 
                             //location.href= "reserve";
-                             location.reload();
+                             //location.reload();
                     },
                     error: function(data){
                         
                          var error = data.responseJSON;
-                            if(error.hasOwnProperty('nepas'))
+                            if(error.hasOwnProperty('num'))
                                     {    
                                         
-                                            $('#ee').html("Enter password please");
+                                            $('#es').html("Enter numbers");
                                     }else{
-                                            $('#ee').html("");
+                                            $('#es').html("");
                                     }
 
                     }
@@ -406,10 +400,11 @@ $('#del').submit(function()
                       // alert(name , pass);
                      
                         $('#ade').val('');
+                         $('#vv').html("");
                        
                              
                             //location.href= "reserve";
-                          location.reload();
+                          //location.reload();
                     },
                     error: function(data){
                        
@@ -431,6 +426,93 @@ $('#del').submit(function()
    return false;
 });
 
+
+
+
+$('#admin-addon').submit(function(e){
+       
+        $.ajax({
+            url: 'mang',
+            type: 'POST',
+            data: $('#admin-addon').serialize(),
+            success:function(data){
+                /*********************/
+               // alert(data)
+                $('#user').html('');
+                $('#email').html('');
+                $('#gender').html('');
+                $('#phone').html('');
+                $('#password').html('');
+                $('#confirm').html('');
+                $('#subsuc').html(data);
+                /********************/
+                $('input[name="username"]').val('');
+                $('input[name="email"]').val('');
+                $('input[name="phone"]').val('');
+                $('input[name="password"]').val('');
+                $('input[name="confirmpassword"]').val('');
+                
+                /*********************/
+                // page should reload here
+                //location.reload();
+            },
+            error: function(data){
+                var err = data.responseJSON;
+                /********************/
+                
+                if(err.hasOwnProperty('username'))
+                {
+                    
+                   $('#user').html(err['username']);
+                }else{
+                    $('#user').html('');
+                }
+
+                /********************/
+                if(err.hasOwnProperty('email'))
+                {
+                   
+                    $('#email').html(err['email']);
+                }else{
+                    $('#email').html('');
+                }
+                /*****************/
+                 if(err.hasOwnProperty('gender'))
+                {
+                    $('#gender').html(err['gender']);
+                }else{
+                    $('#gender').html('');
+                }
+                /****************/
+                 if(err.hasOwnProperty('phone'))
+                {
+                    $('#phone').html(err['phone']);
+                }else{
+                    $('#phone').html('');
+                }
+                /****************/
+                if(err.hasOwnProperty('password'))
+                {
+                    $('#password').html(err['password']);
+                }else{
+                    $('#password').html('');
+                }
+                /******************/
+                if(err.hasOwnProperty('confirmpassword'))
+                {
+                    if( err['confirmpassword'] == "The confirmpassword field is required.")
+                    {
+                        $('#confirm').html('confirm password is required');
+                    }else
+                    {
+                        $('#confirm').html("The password and confirm password must match");
+                    }
+                } 
+                /*****************/
+            }
+        });
+        return false;
+    });
 });
 
 

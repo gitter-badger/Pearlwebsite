@@ -75,6 +75,9 @@ class operationController extends Controller
         unset($_SESSION['phone']);
         unset($_SESSION['email']);
         unset($_SESSION['type_id']);
+            if(isset($_COOKIE[session_name()])) {
+			setcookie(session_name(), '', time()-50000, '/');
+		}	
     }
      
     public function checkAvailability(Request $request)

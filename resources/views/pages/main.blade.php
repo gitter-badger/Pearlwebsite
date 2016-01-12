@@ -390,12 +390,10 @@
 
 
                 <div class="col-md-8">
-
-
                     <div class="reserve text-left">
                         <div class="form-group">
                             <h5>check in date:</h5>
-                            {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control', 'id' => 'sel1']) }}
+                            {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control','id'=>'sel1']) }}
                              @inject('form' , 'App\ourclass\formaction')
                             {{ $form->show_MY('sell','rmonth') }} <!-- id , name -->
                         </div>
@@ -407,7 +405,7 @@
                             <div class="form-group">
                                 <h5>check out date:</h5>
                                     {{ Form::selectRange('cday',1,31,null,['class'=>'form-control','id'=>'sel2']) }}
-                                    {{ $form->show_MY('mdc','cmonth') }}
+                                    {{ $form->show_MY('mdc','cmonth') }} 
                             </div>
                         </form>
                     </div>

@@ -23,7 +23,6 @@
 </head>
 <body>
 
-<!=====================================================================================================================================================================================================================================================-->
 <!---------- start confirm reservation ---------->
                 <!--Sign in -->
                 @include('layout.signin')
@@ -109,6 +108,7 @@
                 ?></p></td>
             <td><p><?php if($_SESSION['lock'] == 1 )
             {
+                
             echo  $_SESSION['tot'];
             }
             else if($_SESSION['lock'] == 0)
@@ -135,7 +135,8 @@
                 ?></p></td>
             <td><p><?php if($_SESSION['lock'] == 1 )
             {
-                  $_SESSION['tot2'];
+ 
+                  echo   $_SESSION['tot2'];
                 
             }
             else if($_SESSION['lock'] == 0)
@@ -163,7 +164,8 @@
            
             <td><strong><p><?php if($_SESSION['lock'] == 1 )
             {
-            echo  $_SESSION['tot3'];
+    
+             echo   $_SESSION['tot3'];
             }
             else if($_SESSION['lock'] == 0)
             {
@@ -241,7 +243,7 @@
    
    </div>
     <div class="taxes col-xs-12 ">
-    <p><strong>Taxes (7%):</strong> 630 L.E</p>
+    <p><strong>Taxes (7%):</strong> 78.75 $</p>
     <p><strong>Total :</strong> <span><?php if($_SESSION['lock'] == 1 )
             {
             echo  $_SESSION['all_tot']+78.75 ;
@@ -251,6 +253,7 @@
                 echo $_SESSION['all_to'] +78.75;  
             }
             
+            unset($_SESSION['lock']);
                 ?></span> </p>
    </div>
     <div class="button text-center">

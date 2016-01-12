@@ -225,28 +225,18 @@
             </div>
                       </div>
                       
-                      <div class="tab-pane fade add-user" id="add">
+                <div class="tab-pane fade add-user" id="add">
                        
-               <h2>Add User</h2>
                
-               <form role="form" class="manager-form">
-                <div class="form-group" id="us-info">
-            <label for="sel1">User Type:</label>
-            <select class="form-control" id="sel1">
-              <option>Admin</option>
-              <option>Receptionist</option>
-            </select>
-            </div>
+                   @include('layout.adduser')
+               
                 
-               <div class="form-group" id="us-info">
-               <label for="usr"> First Name:</label>
+              <!-- <div class="form-group" id="us-info">
+               <label for="usr"> User Name:</label>
                <input type="text" class="form-control" id="usr" required>
              </div>
                
-            <div class="form-group" id="us-info">
-               <label for="pwd">last name:</label>
-               <input type="text" class="form-control" required>
-             </div>
+           
             
             
             <div class="form-group" id="use-info">
@@ -259,6 +249,9 @@
                <input type="email" class="form-control" required>
             </div>
              
+
+             
+
              <div class="form-group" id="use-info">
                <label>Phone Number: </label>
                <input type="text" class="form-control" required>
@@ -268,6 +261,7 @@
                <label for="pwd">confirm Phone Number: </label>
                <input type="text" class="form-control">
             </div>
+
             
             <div class="form-group" id="use-info">
             <label for="pwd">password:</label>
@@ -278,12 +272,22 @@
             <label for="pwd">Confirm password:</label>
             <input type="password" class="form-control" id="pwd" required>
           </div>
+          <div class="form-group" id="use-info">
+               <label>Phone Number: </label>
+               <input type="text" class="form-control" required>
+            </div>
+            
+            <div class="form-group" id="use-info">
+               <label for="pwd">confirm Phone Number: </label>
+               <input type="text" class="form-control">
+            </div>
                
             
                    <input type="submit" class="btn-primary btn-lg btn-block" value="confirm">
 
                
-               </form>
+               </form>-->
+              
                       
                      </div>
                       <div class="tab-pane fade remove-user" id="remove">
