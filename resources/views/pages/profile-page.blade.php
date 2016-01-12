@@ -69,50 +69,62 @@
                     <div class="board-inner">
                     <ul class="nav nav-tabs" id="myTab">
                     <div class="liner"></div>
-                     <li class="active">
-                     <a href="#home" data-toggle="tab" title="welcome">
-                      <span class="round-tabs one">
-                              <i class="glyphicon glyphicon-home"></i>
-                      </span> 
-                  </a></li>
-
-                  <li><a href="#profile" data-toggle="tab" title="profile">
+                    <!--
+                    <li >
+                        <a href="#home" data-toggle="tab" title="welcome">
+                            <span class="round-tabs one">
+                            <i class="glyphicon glyphicon-home"></i>
+                            </span>
+                       </a>  
+                    </li>
+                    -->
+                    
+                 <li 
+                     class="active"
+                     ><a href="#profile" data-toggle="tab" title="profile" >
                      <span class="round-tabs two">
                          <i class="glyphicon glyphicon-user"></i>
                      </span> 
-           </a>
+                     </a>
                  </li>
+                    
+                    @if(isset($same_user))
                  <li><a href="#edit-pro" data-toggle="tab" title="Edit Profile">
                      <span class="round-tabs three">
                           <i class="glyphicon glyphicon-wrench"></i>
                      </span> </a>
                      </li>
-
+                        @endif
+                        
+                       @if(isset($same_user))
                      <li><a href="#edit-res" data-toggle="tab" title="Edit Reservation">
                          <span class="round-tabs four">
                               <i class="glyphicon glyphicon-registration-mark"></i>
                          </span> 
                      </a></li>
-
+                       @endif
+                       @if(isset($same_user))
+                       <!--
                      <li><a href="#thanks" data-toggle="tab" title="Thanks">
                          <span class="round-tabs five">
                               <i class="glyphicon glyphicon-ok"></i>
                          </span> </a>
-                     </li>
-                     
+                     </li> -->
+                     @endif
                      </ul></div>
 
                      <div class="tab-content">
-                      <div class="tab-pane fade in active" id="home">
+                       <!--
+                      <div class="tab-pane fade  " id="home">
 
                           <h1> Welcome To Pearl Hotel </h1>
                           <p class="lead">Hello Guest ..Pearl Hotel Is a 3-Stars Hotel At EL Ma'ady District , The Queitest Place In Cairo , In Pearl Hotel You Can Have A Queit,Restful And Luxary Time</p>
                           <a href="/" class="btn btn-danger btn-lg">Pearl Hotel</a>
 
-                      </div>
+                      </div >-->
                       
                       
-                      <div class="tab-pane fade" id="profile">
+                      <div class="tab-pane fade in active" id="profile">
                         <h2>Your Profile</h2>
                         <div class="profile-content">
                         <div class="pro-header text-left">
@@ -126,8 +138,8 @@
                             </div>          
                         </div>
                         
-                        <div class="user-table">
-                           
+                 @if(isset($same_user))
+                <div class="user-table">            
                 <table class="table">
                    <th colspan="2" class=warning>Booking Data</th>
                
@@ -163,14 +175,13 @@
                      <td> visa</td>
                    </tr>
                 </table>
-                        </div>
+                </div>
+                 @endif
                       </div>
                       </div>                      
-                      
-                      <div class="tab-pane fade" id="edit-pro">
-                         
-                          
-               <div class="edit-profile">
+            @if(isset($same_user))  
+            <div class="tab-pane fade" id="edit-pro">        
+            <div class="edit-profile">
             <h2>Edit profile data :</h2>
             <div class="update">
              <!--   <form  id="uppe">
@@ -242,12 +253,12 @@
             </div>
             
                       </div>
-                      
-                      
-                      <div class="tab-pane fade" id="edit-res">
+                      @endif
+                      @if(isset($same_user))
+                <div class="tab-pane fade" id="edit-res">
                          
-                         <h2>Edit Your Reservation</h2>
-                          <div class="reserve text-left">
+                <h2>Edit Your Reservation</h2>
+                <div class="reserve text-left">
          <div class="form-group">
        <h5>check in date:</h5>
       
@@ -437,11 +448,15 @@
   </div>
 </div>
                       </div>
+                      @endif
+                      
+                      @if(isset($same_user))
+                      <!--
                       <div class="tab-pane fade" id="thanks">
                         <h2>Thank You</h2>
                       <h3>Thanks For Visiting Our Hotel .. We Hope You Have A nice Time With Us</h3>
-                     </div>
-
+                     </div> -->
+                      @endif
 </div>
 <div class="clearfix"></div>
 </div>

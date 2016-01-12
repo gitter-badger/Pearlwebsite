@@ -79,18 +79,22 @@ class RouteController extends Controller
                 if($_SESSION['type_id'] == 1)
                 {
                     $user = $_SESSION;
+                    $user['same_user'] = 1;
                     return view('pages.profile-page', $user);
                 }else if($_SESSION['type_id'] == 2)
                 {
                     $user = $_SESSION;
+                    $user['same_user'] = 1;
                     return view('pages.manager',$user);
                 }else if($_SESSION['type_id'] == 3)
                 {
                     $user = $_SESSION;
+                    $user['same_user'] = 1;
                     return view('pages.admin-page',$user);
                 }else
                 {
                     $user = $_SESSION;
+                    $user['same_user'] = 1;
                     return view('pages.receptionist',$user);
                 }
             }else
@@ -103,11 +107,20 @@ class RouteController extends Controller
             $profile = DB::table('user_table')->where('username',$username)->first();
             if(isset($profile) && $profile->user_type_id == 1)
             {
+                
+                
                  $p = array(
-                'username' => "$profile->username" ,
-                'email' => $profile->email , 
-                'phone' => $profile->phone
-                );
+                     'username' => $profile->username ,
+                     'email' => $profile->email ,
+                     'phone' => $profile->phone
+                    );
+                 if(isset($_SESSION['username']))
+                 {
+                    if($username == $_SESSION['username'])
+                    {
+                       $p['same_user'] = 1;
+                    }
+                 }
                 return view('pages.profile-page', $p );
             }else
             {

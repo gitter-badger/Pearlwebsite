@@ -395,7 +395,7 @@
                     <div class="reserve text-left">
                         <div class="form-group">
                             <h5>check in date:</h5>
-                            {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control', 'id' => 'rday']) }}
+                            {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control', 'id' => 'sel1']) }}
                              @inject('form' , 'App\ourclass\formaction')
                             {{ $form->show_MY('sell','rmonth') }} <!-- id , name -->
                         </div>
@@ -406,7 +406,7 @@
                         <form role="form">
                             <div class="form-group">
                                 <h5>check out date:</h5>
-                                    {{ Form::selectRange('cday',1,31,null,['class'=>'form-control','id'=>'sel1']) }}
+                                    {{ Form::selectRange('cday',1,31,null,['class'=>'form-control','id'=>'sel2']) }}
                                     {{ $form->show_MY('mdc','cmonth') }}
                             </div>
                         </form>
@@ -446,17 +446,6 @@
                                 <td rowspan="1">
 
                                     <input type="text" class="form-control" id="v1" name="oneval" value="0" ><br></br>
-                                        
-                                   <!-- <div class="form-group">
-                                        <select class="form-control" id="sel1">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
-                                    </div>-->
-
-
                                 </td>
                             </tr>
 

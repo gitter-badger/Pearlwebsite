@@ -61,6 +61,37 @@ class operation_controller extends Controller
     }
     public function reserveation(Request $re)
     {
+     
+        $op = new operationController();
+       
+       /* $request = (object)array(
+            'single' => $re->oneval,
+            'double' => $re->twoval,
+            'tripple'=> $re->threeval,
+            
+            'dayin' => $re->rday,
+            'monthin' => $re->rmonth,
+            'dayout' =>  $re->cday,
+            'monthout' => $re->cmonth,
+        );*/
+        $re->request->add([
+            'single' => $re->oneval,
+            'double' => $re->twoval,
+            'tripple'=> $re->threeval,
+            
+            'dayin' => $re->rday,
+            'monthin' => $re->rmonth,
+            'dayout' =>  $re->cday,
+            'monthout' => $re->cmonth,
+        ]);
+        
+        $chechAv = $op->checkAvailability($re);
+        
+        if(!$chechAv)
+        {
+            $this->throwValidationException($re ,0);
+        }   
+        
         $val1=$re->oneval;
         $val2=$re->twoval;
         $val3=$re->threeval;
@@ -168,7 +199,7 @@ class operation_controller extends Controller
                  {
                     
                         $tot=$val1 * $all_days * 50;
-                        echo $_SESSION['tot']=$tot;
+                        $_SESSION['tot']=$tot;
                        
                          $tot2=$val2 * $all_days * 60;
                          $_SESSION['tot2']=$tot2;

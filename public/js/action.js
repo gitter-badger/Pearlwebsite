@@ -4,7 +4,7 @@ $(document).ready(function(){
    $('#SignIn').submit(function()
    {            
         $.ajax({
-            url : 'login',
+            url : '/login',
             type: 'POST',
             data: {
             name:  $('#wq').val(),
@@ -50,10 +50,7 @@ $(document).ready(function(){
    return false;
 });
 
-
- $('#reservation').submit(function()
-   { 
-                    
+  $('#reservation').submit(function(e){       
         $.ajax({
                     url : 'serve',
                     type: 'POST',
@@ -61,6 +58,7 @@ $(document).ready(function(){
                     oneval:  $('#v1').val(),
                     twoval:  $('#v2').val(),
                     threeval: $('#v3').val(),
+                    
                     rday:$('#sel1').val(),
                     rmonth:$('#sell').val(),
                     cday:$('#sel2').val(),
@@ -69,32 +67,33 @@ $(document).ready(function(){
                     
                     success:function(data){
                       // alert(name , pass);
-                      alert(data);
+                      //alert(data);
                         $('#v1').val('0');
                         $('#v2').val('0');
                         $('#v3').val('0');
-                        
-                            $('#we').html("");
-                            
-                            location.href= "reserve";
+                        $('#we').html("");
+                        location.href= "reserve";
                     },
                     error: function(data){
-                        
-                           $('#we').html("Fill one of them , or enter numbers , or you may be forget to make check in and check out");
+                           
+                           $('#we').css({"color":"red"});
+                           $('#we').html("Fill information correctly");
                     }
                 });
-   return false;
-});
+        return false;
+   }); 
 
-   
-   $('#chechAv').click(function(){
+
+
+
+$('#chechAv').click(function(){
        var sroom = $('#v1').val();
        var droom = $('#v2').val();
        var troom = $('#v3').val();
        
-       var dcheckin = $("#rday").val();
+       var dcheckin = $("#sel1").val();
        var mcheckin = $('#sell').val();
-       var dcheckout = $('#sel1').val();
+       var dcheckout = $('#sel2').val();
        var mchechout = $('#mdc').val();
        
        
@@ -124,6 +123,8 @@ $(document).ready(function(){
                    {
                       $('#we').css({"color":"green"});
                       $('#we').html("Available"); 
+                       
+                      
                    }else
                    {
                       $('#we').css({"color":"red"});
@@ -137,10 +138,7 @@ $(document).ready(function(){
                }
            });
        }
-       
-   });
-
- 
+});
 
     /***************/
     

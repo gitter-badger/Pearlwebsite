@@ -4,7 +4,7 @@ $(function(){
     $('#signup').submit(function(e){
         e.preventDefault();
         $.ajax({
-            url: 'signup',
+            url: '/signup',
             type: 'POST',
             data: $('#signup').serialize(),
             success:function(data){
@@ -82,8 +82,9 @@ $(function(){
         });
     });
     $('#logout').click(function(){
+       
         $.ajax({
-            url: 'logout',
+            url: '/logout',
             type: 'POST',
             success: function(data){
                 location.reload();
