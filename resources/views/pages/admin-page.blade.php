@@ -224,6 +224,7 @@
 
 
                 <div class="tab-pane fade text-center" id="add">
+
                         <h2>Add Room</h2>
                         <form role="form" class="room" id="ad">
                 <div class="form-group">
@@ -243,6 +244,26 @@
                    <input type="submit" class="btn btn-sm btn-success" value="Add Room">
                        <br/>
                        
+
+                <h2>Add Room</h2>
+                <form role="form" class="room" id="ad">
+                    <div class="form-group">
+                        <label for="sel1">Room Type:</label>
+                        <select class="form-control" name="sw" id="sel1">
+                            <option value="1">Single</option>
+                            <option value="2">Double</option>
+                            <option value="3">Suit</option> 
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="usr"> Number Of Rooms:</label>
+                        <input type="text" name="num" class="form-control" id="ads">
+                        <br/>
+                        <label id="ee" style="color: red"></label>
+                    </div>
+                    <input type="submit" class="btn btn-sm btn-success" value="Add Room">
+                    <br/>
+
                 </form>  
                         
                    <!-- <h2>Add Payment Method</h2>

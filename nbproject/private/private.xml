@@ -5,6 +5,7 @@
 <<<<<<< HEAD
         <group>
             <file>file:/opt/lampp/htdocs/pearlo/resources/views/layout/signup.blade.php</file>
+<<<<<<< HEAD
             <file>file:/opt/lampp/htdocs/pearlo/public/js/action.js</file>
             <file>file:/opt/lampp/htdocs/pearlo/public/js/signupAction.js</file>
             <file>file:/opt/lampp/htdocs/pearlo/resources/views/layout/signin.blade.php</file>
@@ -17,6 +18,17 @@
             <file>file:/opt/lampp/htdocs/pearlo/app/Http/routes.php</file>
             <file>file:/opt/lampp/htdocs/pearlo/app/Http/Controllers/operationController.php</file>
             <file>file:/opt/lampp/htdocs/pearlo/resources/views/layout/adduser.blade.php</file>
+=======
+            <file>file:/opt/lampp/htdocs/pearlo/resources/views/pages/admin-page.blade.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/app/Http/Controllers/operation_controller.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/public/js/action.js</file>
+            <file>file:/opt/lampp/htdocs/pearlo/public/js/signupAction.js</file>
+            <file>file:/opt/lampp/htdocs/pearlo/app/Http/Controllers/RouteController.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/resources/views/layout/signin.blade.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/resources/views/pages/profile-page.blade.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/app/Http/routes.php</file>
+            <file>file:/opt/lampp/htdocs/pearlo/app/Http/Controllers/operationController.php</file>
+>>>>>>> 1d973b0ab64c2c410bd6da2c83950589521a2c3c
         </group>
 =======
         <group/>

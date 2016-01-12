@@ -2,9 +2,15 @@
 
 
 namespace App\ourclass;
+<<<<<<< HEAD
 use App\Http\Controllers\operationController;
 
+=======
+
+use App\Http\Controllers\operationController;
+>>>>>>> 1d973b0ab64c2c410bd6da2c83950589521a2c3c
 use DB;
+
 
 class formaction {
     
@@ -38,7 +44,7 @@ class formaction {
               'December' => '12'
          );
                  
-         public function show_MY($id,$name)
+    public function show_MY($id,$name)
     {
          
          $month = $this->month;
@@ -63,17 +69,6 @@ class formaction {
                 }
          }
          echo "</select>";
-    }
-    
-    public function genReservation()
-    {
-        
-        DB::table('reservation_table')->insert([
-            'user_id' => 1,
-            'checkin' => '2016-01-12',
-            'checkout'=> '2016-01-20',
-            'reservation_date' => '2016-01-10'
-        ]);   
     }
     
     public function make_date($day,$my)// get day and month year
@@ -144,4 +139,5 @@ class formaction {
         /****************************/
         
     }
+
 }

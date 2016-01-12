@@ -249,7 +249,19 @@
                <input type="email" class="form-control" required>
             </div>
              
+
              
+
+             <div class="form-group" id="use-info">
+               <label>Phone Number: </label>
+               <input type="text" class="form-control" required>
+            </div>
+            
+            <div class="form-group" id="use-info">
+               <label for="pwd">confirm Phone Number: </label>
+               <input type="text" class="form-control">
+            </div>
+
             
             <div class="form-group" id="use-info">
             <label for="pwd">password:</label>

@@ -72,7 +72,7 @@
         @else
     <p>We are ready to confirm your reservation. please review the reservation details below.</p>
     <p>Reserved as : <span><?php echo $_SESSION['username']; ?></span> <a>( not FIRSTNAME? Click here to change the user)</a></p>
-   </div>
+  </div>
     <div class="col-md-7 col-xs-12 ">
     <div class=" msg_confirm" >
     <p>Email address : <span><?php echo $_SESSION['email']; ?></span></p>

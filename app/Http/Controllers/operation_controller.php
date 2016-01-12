@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\user_table;
-use Illuminate\Auth\Events\Login;
+
+
 use DB;
 
 class operation_controller extends Controller
@@ -199,8 +200,6 @@ class operation_controller extends Controller
                          $_SESSION['all_tot']=$all_tota;
                          $_SESSION['lock']=1;
                      /************Session***********/
-                    
-                     
                      
                      
                      
@@ -285,6 +284,7 @@ class operation_controller extends Controller
         return $ud;
         
     }
+
      public function adduser(Request $request)
     {
         $userType=$request->type;

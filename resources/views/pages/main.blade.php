@@ -379,7 +379,7 @@
     <!--   ------------------------------------------------------------------>
 
 
-    <form class="reservation" id="reservatio">
+    <form class="reservation" id="reservation">
 
 
 
@@ -449,7 +449,6 @@
 >>>>>>> eb300798846e25475b6b8b588a2385992eb56e67
                              @inject('form' , 'App\ourclass\formaction')
                             {{ $form->show_MY('sell','rmonth') }} <!-- id , name -->
-
                         </div>
                     </div>
                   

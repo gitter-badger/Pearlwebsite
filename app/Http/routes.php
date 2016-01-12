@@ -35,6 +35,7 @@ Route::post('upph',"operation_controller@upph" );
 Route::post('uppaw', 'operation_controller@uppaw');
 Route::post('dele', 'operation_controller@delone');
 Route::post('add', 'operation_controller@addone');
+
 Route::post('mang', 'operation_controller@adduser');
 /*********************************************************/
 
