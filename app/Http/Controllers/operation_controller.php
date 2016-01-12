@@ -31,45 +31,52 @@ class operation_controller extends Controller
         
         $user=user_table::where('username',$name)->first();
         $name=$user['username'];
+        $id=$user['id'];
         $pass=$user['password'];
         $phone=$user['phone'];
         $email=$user['email'];
         $type_id = $user['user_type_id'];
-        echo $chek;
-        /*if($chek != 0)
-        { 
-            if (Auth::attempt(array('name' => $name, 'pass' => $password), true))
-             {
-               
-             }
-        }
-        /*if($pass == $password)
+       
+        
+        if($pass == $password)
         {
            if(session_status() == PHP_SESSION_NONE)
            {
                session_start();
                
            }
+           if($chek == 'true')
+            {   
+              session_set_cookie_params('6048000'); 
+		session_regenerate_id(true);
+             }
             $_SESSION['logged_state'] = 1;
             $_SESSION['username']= $name;
             $_SESSION['phone']= $phone;
             $_SESSION['email']= $email;
             $_SESSION['type_id'] = $type_id;
+            
+ 
+            return 1;
         }
         else                 
         {
             return 0;
-        }*/
+
+        }
             
-    }
+
+        }
+        
+    
     
     public function  search_user(Request $re)
     {
         $this->validate($request , [
         'name'  => 'required']);
        $user=user_table::where('username',$name)->first();
-       return view('pages.admin',  compact($user));
-       
+       //return view('pages.admin',  compact($user));
+       return $user;
     }
     public function reserveation(Request $re)
     {

@@ -2,28 +2,29 @@ $(document).ready(function(){
   
   //alert("action here");
    $('#SignIn').submit(function()
-   { 
-                    
+   {            
         $.ajax({
+
                     url : 'login',
                     type: 'POST',
                     data: {
                     name:  $('#wq').val(),
                     pass: $('#bq').val(),
-                    ks:$('#kk').val()
+                    ks:$('#kk').is(":checked")
                     },
                     success:function(data){
                         //alert(name , pass);
-                        alert(data)
-                       // if(data == 0){
+                        //alert(data)
+                        if(data == 0){
                         $('#wq').val('');
                         $('#bq').val('');
 
                             $('#we-danger').html("");
                             $('#be-danger').html("");
-                           // location.reload();
-                       //}
-                       /*else
+                          //location.reload();
+                           $('#signin-faild').html("Sign falied user name or password not found")
+                       }
+                       else if(data==1)
                        {
                             $('#wq').val('');
                         $('#bq').val('');
@@ -31,70 +32,32 @@ $(document).ready(function(){
                             $('#we-danger').html("");
                             $('#be-danger').html("");
                            location.reload();
-                       //}*/
+                       }  
                     },
-                    error: function(data){
-                            var error = data.responseJSON;
-
-                                    if(error.hasOwnProperty('name'))
-                                    {    
-                                            $('#we-danger').html("Enter user name ");
-                                    }else{
-                                            $('#we-danger').html("");
-                                    }
-
-                                    if (error.hasOwnProperty('pass'))
-                                    {
-                                            $('#be-danger').html("Enter passowrd");
-                                    }else{
-                                            $('#be-danger').html("");
-                                    }
-
-                    }
-                });
-   return false;
-});
- $('#SignIn').submit(function()
-   { 
                     
-        $.ajax({
-                    url : 'login',
-                    type: 'POST',
-                    data: {
-                    name:  $('#wq').val(),
-                    pass: $('#bq').val()
-                    },
-                    success:function(data){
-                        //alert(name , pass);
-                       // alert(data);
-                        $('#wq').val('');
-                        $('#bq').val('');
+            error: function(data){
+                var error = data.responseJSON;
+                if(error.hasOwnProperty('name'))
+                {    
+                        $('#we-danger').html("Enter user name ");
+                }else{
+                        $('#we-danger').html("");
+                }
 
-                            $('#we-danger').html("");
-                            $('#be-danger').html("");
-                            location.reload();
-                    },
-                    error: function(data){
-                            var error = data.responseJSON;
 
-                                    if(error.hasOwnProperty('name'))
-                                    {    
-                                            $('#we-danger').html("Enter user name ");
-                                    }else{
-                                            $('#we-danger').html("");
-                                    }
+                if (error.hasOwnProperty('pass'))
+                {
+                        $('#be-danger').html("Enter passowrd");
+                }else{
+                        $('#be-danger').html("");
+                }
 
-                                    if (error.hasOwnProperty('pass'))
-                                    {
-                                            $('#be-danger').html("Enter passowrd");
-                                    }else{
-                                            $('#be-danger').html("");
-                                    }
-
-                    }
-                });
+            }
+        });
    return false;
 });
+
+
  $('#reservation').submit(function()
    { 
                     
@@ -133,6 +96,87 @@ $(document).ready(function(){
                 });
    return false;
 });
+
+    $('#reservatio').submit(function()
+      {               
+       $.ajax({
+           url : 'serve',
+           type: 'POST',
+           data: {
+           oneval:  $('#v1').val(),
+           twoval:  $('#v2').val(),
+           threeval: $('#v3').val()
+           },
+           success:function(data){
+             // alert(name , pass);
+             //alert(data);
+               $('#v1').val('0');
+               $('#v2').val('0');
+               $('#v3').val('0');
+               $('#we').html("");
+               location.href= "reserve";
+           },
+           error: function(data){
+               $('#we').css({"color":"red"});
+               $('#we').html("Enter number of rooms");
+           }
+       });
+      return false;
+   });
+   
+   $('#chechAv').click(function(){
+       var sroom = $('#v1').val();
+       var droom = $('#v2').val();
+       var troom = $('#v3').val();
+       
+       var dcheckin = $("#rday").val();
+       var mcheckin = $('#sell').val();
+       var dcheckout = $('#sel1').val();
+       var mchechout = $('#mdc').val();
+       
+       
+       if(sroom == 0 && droom == 0 && troom == 0)
+       {
+           $('#we').css({"color":"red"});
+           $('#we').html("Enter number of rooms");
+       }else
+       {
+           $('#we').html("");
+           $.ajax({
+               url: 'checkAvailability',
+               type: 'POST',
+               data:{
+                   single : sroom,
+                   double : droom,
+                   tripple: troom,
+                   
+                   dayin : dcheckin,
+                   monthin: mcheckin,
+                   dayout : dcheckout,
+                   monthout: mchechout
+               },
+               success:function(data){
+                   //alert(data);
+                   if(data == 1)
+                   {
+                      $('#we').css({"color":"green"});
+                      $('#we').html("Available"); 
+                   }else
+                   {
+                      $('#we').css({"color":"red"});
+                      $('#we').html("Not Available"); 
+                   }
+                   
+               },
+               error:function(data){
+                   var err = data.responseJSON;
+                   alert(data['responseText']);
+               }
+           });
+       }
+       
+   });
+
  
 
     

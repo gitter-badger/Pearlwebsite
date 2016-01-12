@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -346,27 +346,9 @@ By accessing and/or using this code snippet, you agree to AccuWeather�s terms 
                     </div>
                     
 
-                     <div class="col-lg-4">
-                        <h3>Keep In Touch</h3>
-                        <form role="form">
-                            
-                                <div class="form-group">
-                                    <input type="text" class="form-control input-md" placeholder="Username">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control input-md" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control input-md" placeholder="Cell Phone">
-                                </div>
-                            
-                                <div class="form-group">
-                                    <textarea class="form-control input-md" placeholder="Your Message"></textarea>
-                                </div>
-                                <button type="button" class="btn btn-danger btn-md btn-block">Contact Us</button>
-                           
-                        </form>
-                    </div>
+                     <!-- contact start -->
+                     @include('layout.contact')
+                    <!-- contact end here -->
                     
                 </div>
             </div>

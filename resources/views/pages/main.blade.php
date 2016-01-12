@@ -379,7 +379,7 @@
     <!--   ------------------------------------------------------------------>
 
 
-    <form class="reservation" id="reservation">
+    <form class="reservation" id="reservatio">
 
 
 
@@ -395,6 +395,7 @@
                     <div class="reserve text-left">
                         <div class="form-group">
                             <h5>check in date:</h5>
+<<<<<<< HEAD
                             {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control','id'=>'sel1']) }}
 
                            @inject('hel',App\ourclass\formaction')
@@ -443,17 +444,21 @@
                                 <option>Apr 2015</option>
                             </select> -->
 
+=======
+                            {{ Form::selectRange('rday', 1, 31 , null,['class' => 'form-control', 'id' => 'rday']) }}
+>>>>>>> eb300798846e25475b6b8b588a2385992eb56e67
                              @inject('form' , 'App\ourclass\formaction')
                             {{ $form->show_MY('sell','rmonth') }} <!-- id , name -->
 
                         </div>
                     </div>
-
-
+                  
+                        
                     <div class="reserve text-left">
                         <form role="form">
                             <div class="form-group">
                                 <h5>check out date:</h5>
+<<<<<<< HEAD
 
                                   
                                
@@ -491,8 +496,10 @@
                                 
 
                                     {{ Form::selectRange('cday',1,31,null,['class'=>'form-control','id'=>'sel2']) }}
+=======
+                                    {{ Form::selectRange('cday',1,31,null,['class'=>'form-control','id'=>'sel1']) }}
+>>>>>>> eb300798846e25475b6b8b588a2385992eb56e67
                                     {{ $form->show_MY('mdc','cmonth') }}
-
                             </div>
                         </form>
                     </div>
@@ -500,7 +507,7 @@
 
                 <div class="col-md-4">
 
-                    <button class="btn-primary btn-sm">Check Availability</button>
+                    <button type="button" class="btn-primary btn-sm" id="chechAv" >Check Availability</button>
 
                 </div>
 
@@ -649,28 +656,9 @@ By accessing and/or using this code snippet, you agree to AccuWeather�s terms 
                     </div>
                     </div>
                     
-
-                     <div class="col-lg-4">
-                        <h3>Keep In Touch</h3>
-                        <form role="form">
-                            
-                                <div class="form-group">
-                                    <input type="text" class="form-control input-md" placeholder="Username">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control input-md" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control input-md" placeholder="Cell Phone">
-                                </div>
-                            
-                                <div class="form-group">
-                                    <textarea class="form-control input-md" placeholder="Your Message"></textarea>
-                                </div>
-                                <button type="button" class="btn btn-danger btn-md btn-block">Contact Us</button>
-                           
-                        </form>
-                    </div>
+                    <!-- contact start -->
+                     @include('layout.contact')
+                    <!-- contact end here -->
                     
                 </div>
             </div>
