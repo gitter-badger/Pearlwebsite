@@ -288,16 +288,33 @@ class operation_controller extends Controller
     }
      public function delone(Request $re)
     {
-         $val5=$re->fw;
+        $val5=$re->fw;
         $val6=$re->nums;
          $this->validate($re, [
             'nums' =>'required |numeric ',
-             
         ]);
-         
-         $ud=array($val5 ,$val6);
-        return $ud;
+        $count = 0;
+        for($i = 0;$i < $val6 ; $i++)
+        {
+           
+           $r = DB::table("table_rooms")->where('room_type_id',$val5)->first();
+          if($r)
+          {
+               $count++;
+               $d = DB::table("table_rooms")->where("id",$r->id)->delete(); 
+          }else
+          {
+              break;
+          }
+        }
         
+        if($val6 == $count)
+        {
+            return "Rooms were Deleted Successfully";
+        }else
+        {
+            return "$count Rooms were Deleted Successfully";
+        }
     }
 
      public function adduser(Request $request)

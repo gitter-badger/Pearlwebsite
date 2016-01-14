@@ -80,11 +80,11 @@
                      </span> 
            </a>
                  </li>
-                 <li><a href="#search" data-toggle="tab" title="Search For User">
+                <!-- <li><a href="#search" data-toggle="tab" title="Search For User">
                      <span class="round-tabs three">
                           <i class="glyphicon glyphicon-search"></i>
                      </span> </a>
-                     </li>
+                     </li> -->
 
                      <li><a href="#add" data-toggle="tab" title="Add Facilities">
                          <span class="round-tabs four">
@@ -130,7 +130,7 @@
                  
                       </div>
                           
-                                                   <h2>Search for User</h2>
+                            <h2>Search for User</h2>
                           <div class="search-cont">
                               <p class="lead">
                                   Please Enter Customer's Email To Find Him
@@ -232,8 +232,9 @@
             <select class="form-control" name="sw" id="sel1">
               <option value="1">Single</option>
                 <option value="2">Double</option>
-                <option value="3">Suit</option> 
-            </select>
+                <option value="3">Tripple</option> 
+            </select><br>
+             <label style="color:green" id="subsuw" ></label>
             </div>
               <div class="form-group">
                <label for="usr"> Number Of Rooms:</label>
@@ -242,7 +243,7 @@
                    <label id="es" style="color: red"></label>
                       
              </div>
-                         <label style="color:green" id="subsuw" ></label>
+                        
                    <input type="submit" class="btn btn-sm btn-success" value="Add Room">
                       
                        <br/>
@@ -283,12 +284,13 @@
             <select class="form-control" name="fw"id="sel2">
                 <option value="1">Single</option>
                 <option value="2">Double</option>
-                <option value="3">Suit</option>
+                <option value="3">Tripple</option>
             </select>
             </div>
               <div class="form-group">
                <label for="usr"> Number Of Rooms:</label>
                 <input type="text" name="nums" class="form-control" id="ade">
+                    <label id="delsucc" style="color: green"></label>
                      <label id="vv" style="color: red"></label>
              </div>
                    <input type="submit" class="btn btn-sm btn-danger" value="Delete Room">

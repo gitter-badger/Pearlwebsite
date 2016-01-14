@@ -19,11 +19,12 @@
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="ks"  id="kk" check="checked" value="1"> Remmber ME </label> 
+                                            <input type="checkbox" name="ks"  id="kk" check="checked" value="1"> Remember me </label> 
                                     </div>
 
                                     <a href="#">Forget Password</a><br> <br>
                                      <label id="signin-danger" style="color: red"></label>
+                                     <label id="signin-succ" style="color: green"></label>
                                      <center ><label id="signin-faild" style="color: red"></label></center>
                                     <input type="submit" class="btn btn-primary" value="Login" ><br>
                                     

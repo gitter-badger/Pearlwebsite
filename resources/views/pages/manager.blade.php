@@ -295,10 +295,10 @@
             <h2>Delete User</h2>
                          <div class="delete">
                              <h3>Enter The Username You Want To Delete</h3>
-            <form role="form" method="post" action="">
+            <form id="deluser">
                 <div class="form-group">
                   
-                    <input type="email" class="form-control" placeholder="Username" name="email">
+                    <input type="text" class="form-control" placeholder="Username" name="userdel">
 
                 </div>
                 

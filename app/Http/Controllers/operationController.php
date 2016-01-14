@@ -99,6 +99,21 @@ class operationController extends Controller
         $checkout = $form->make_date($request->dayout, $request->monthout);
         $today = date("Y-m-d");
         $form->change_room_status();
+        
+        $diff_now = DB::select(DB::raw("SELECT DATEDIFF('$checkin','$today') AS day"));
+        if($diff_now[0]->day < 0)
+        {
+            return 0;
+        }
+        
+        $diff_co = DB::select(DB::raw("SELECT DATEDIFF('$checkout','$checkin') AS day"));
+        if($diff_co[0]->day < 0)
+        {
+            return 0;
+        }
+        
+        
+        
         if($request->single > 0)
         {
             // getting all empty rooms

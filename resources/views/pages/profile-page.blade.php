@@ -254,110 +254,28 @@
             
                       </div>
                       @endif
-                      @if(isset($same_user))
-                <div class="tab-pane fade" id="edit-res">
+            @if(isset($same_user))
+            <div class="tab-pane fade" id="edit-res">
                          
-                <h2>Edit Your Reservation</h2>
-                <div class="reserve text-left">
-         <div class="form-group">
+            <h2>Edit Your Reservation</h2>
+            <div class="reserve text-left">
+            <div class="form-group">
        <h5>check in date:</h5>
-      
-         <select class="form-control" id="sel1">
-           <option selected="selected">day</option>
-           <option>1</option>
-           <option>2</option>
-           <option>3</option>
-           <option>4</option>
-           <option>5</option>
-           <option>6</option>
-           <option>7</option>
-           <option>8</option>
-           <option>10</option>
-           <option>11</option>
-           <option>12</option>
-           <option>13</option>
-           <option>14</option>
-           <option>15</option>
-           <option>16</option>
-           <option>17</option>
-           <option>18</option>
-           <option>19</option>
-           <option>20</option>
-           <option>21</option>
-           <option>22</option>
-           <option>23</option>
-           <option>24</option>
-           <option>24</option>
-           <option>26</option>
-           <option>27</option>
-           <option>28</option>
-           <option>29</option>
-           <option>30</option>
-           <option>31</option>
-           
-
-         </select>
-         
-          <select class="form-control" id="sel1">
-           <option selected="selected">M/y</option>
-           <option>JAn 2015</option>
-           <option>Feb 2015</option>
-           <option> Mar 2015</option>
-           <option>Apr 2015</option>
-         </select>
+        {{ Form::selectRange('chday', 1, 31 , null,['class' => 'form-control','id'=>'ciday']) }}
+        @inject('form' , 'App\ourclass\formaction')
+       {{ $form->show_MY('chmonth','cimonth') }} <!-- id , name -->
           </div>
        </div>
-         
          
         <div class="reserve text-left">
          <form role="form">
          <div class="form-group">
        <h5>check out date:</h5>
-      
-         <select class="form-control" id="sel1" >
-             <option selected="selected">day</option>
-           <option>1</option>
-           <option>2</option>
-           <option>3</option>
-           <option>4</option>
-           <option>5</option>
-           <option>6</option>
-           <option>7</option>
-           <option>8</option>
-           <option>10</option>
-           <option>11</option>
-           <option>12</option>
-           <option>13</option>
-           <option>14</option>
-           <option>15</option>
-           <option>16</option>
-           <option>17</option>
-           <option>18</option>
-           <option>19</option>
-           <option>20</option>
-           <option>21</option>
-           <option>22</option>
-           <option>23</option>
-           <option>24</option>
-           <option>24</option>
-           <option>26</option>
-           <option>27</option>
-           <option>28</option>
-           <option>29</option>
-           <option>30</option>
-           <option>31</option>
-         </select>
-         
-          <select class="form-control" id="sel1">
-             <option selected="selected">M/y</option>
-           <option>1</option>
-           <option>2</option>
-           <option>3</option>
-           <option>4</option>
-         </select>
+      {{ Form::selectRange('cday',1,31,null,['class'=>'form-control','id'=>'coday']) }}
+      {{ $form->show_MY('comonth','comonth') }} 
           </div>
          </form>
-         <button class="btn btn-sm btn-danger">Check Availability</button>
+            <button id="checkava" class="btn btn-sm btn-danger">Check Availability</button>
        </div>
       
         <table class="table  text-center">
@@ -379,16 +297,17 @@
                <h6>WIFI + Air Conditioning</h6></td>
             <td><h5>US$ 50</h5></td>
             <td><h5>One Person</h5></td>
-            <td rowspan="3">
+            <td rowspan="1">
               
                   <div class="form-group">
-                  <select class="form-control" id="sel1">
+                  {{ Form::text('text', 0 , ['id' => 'sr']) }}
+                 <!-- <select class="form-control" id="sel1">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                   </select>
-                  </div>
+                  </div> -->
                
                
             </td>
@@ -401,7 +320,20 @@
                 <h6>WIFI + Air Conditioning</h6></td>
             <td><h5>US$ 60</h5></td>
             <td><h5>Two Persons</h5></td>
-            
+            <td rowspan="1">
+              
+                  <div class="form-group">
+                  {{ Form::text('text', 0 , ['id' => 'sd']) }}
+                 <!-- <select class="form-control" id="sel1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                  </div> -->
+               
+               
+            </td>
          </tr>
          
          <tr class="danger">
@@ -411,7 +343,20 @@
                 <h6>WIFI + Air Conditioning</h6></td>
             <td><h5>US$ 70</h5></td>
             <td><h5>Three Persons</h5></td>
-            
+            <td rowspan="1">
+              
+                  <div class="form-group">
+                  {{ Form::text('text', 0 , ['id' => 'st']) }}
+                 <!-- <select class="form-control" id="sel1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                  </div> -->
+               
+               
+            </td>
          </tr>
          
          

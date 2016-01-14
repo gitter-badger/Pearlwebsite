@@ -361,10 +361,10 @@ $('#ad').submit(function()
                     
                     success:function(data){
                       // alert(name , pass);
-                      alert(data);
+                      //alert(data);
                         $('#ads').val('');
                        $('#es').html("");
-                            $('#subsuw').val(data); 
+                        $('#subsuw').html(data); 
                             //location.href= "reserve";
                              //location.reload();
                     },
@@ -398,17 +398,14 @@ $('#del').submit(function()
                     
                     success:function(data){
                       // alert(name , pass);
-                     
                         $('#ade').val('');
-                         $('#vv').html("");
-                       
-                             
-                            //location.href= "reserve";
-                          //location.reload();
+                        $('#vv').html("");
+                       $('#delsucc').html(data);
                     },
                     error: function(data){
                        
                         var error = data.responseJSON;
+                        alert(data['responseText']);
                             if(error.hasOwnProperty('nums'))
                                     {    
                                         

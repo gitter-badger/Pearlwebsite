@@ -104,4 +104,64 @@ $(function(){
         e.preventDefault();
         alert("contact submitted");
     });
+    
+    /*
+    $('#checkava').click(function(){
+       var sroom = $('#sr').val();
+       var droom = $('#sd').val();
+       var troom = $('#st').val();
+       
+       var dcheckin = $("#ciday").val();
+       var mcheckin = $('#chmonth').val();
+       var dcheckout = $('#coday').val();
+       var mchechout = $('#comonth').val();
+       
+       
+       if(sroom == 0 && droom == 0 && troom == 0)
+       {
+           $('#we').css({"color":"red"});
+           $('#we').html("Enter number of rooms");
+       }else
+       {
+           $('#we').html("");
+           $.ajax({
+               url: 'checkAvailability',
+               type: 'POST',
+               data:{
+                   single : sroom,
+                   double : droom,
+                   tripple: troom,
+                   
+                   dayin : dcheckin,
+                   monthin: mcheckin,
+                   dayout : dcheckout,
+                   monthout: mchechout
+               },
+               success:function(data){
+                   //alert(data);
+                   if(data == 1)
+                   {
+                      $('#we').css({"color":"green"});
+                      $('#we').html("Available"); 
+                       
+                      
+                   }else
+                   {
+                      $('#we').css({"color":"red"});
+                      $('#we').html("Not Available"); 
+                   }
+                   
+               },
+               error:function(data){
+                   var err = data.responseJSON;
+                   alert(data['responseText']);
+               }
+           });
+       }
+    });*/
+    
+    $('#deluser').submit(function(){
+        alert("hello del");
+    });
+    
 });
